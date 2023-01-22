@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.block {
+	width: 100%;
+	height: 100vh;
+}
+
+.hero-text {
+	color: brown;
+	font-size: 72px;
+	text-decoration: none;
+}
+
+/* Hide scrollbar */
+body::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
