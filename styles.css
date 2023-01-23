@@ -3,9 +3,27 @@ body {
 	font-family: 'Courier New', Courier, monospace;
 }
 
+a {
+	color: brown;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+a:hover {
+	color: #000;
+}
+
 .block {
 	width: 100%;
 	height: 100vh;
+}
+
+.content {
+	max-width: 60ch;
+	padding: 3em 1em;
+	margin: auto;
+	line-height: 1.6;
+	font-size: 1.25em;
 }
 
 .hero-text {
@@ -22,4 +40,11 @@ body::-webkit-scrollbar {
 body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+}
+
+.work > li{
+	list-style-type: none;
+	margin: 1em 0;
+	padding-left: 0rem;
+	text-indent: -2.6rem;
 }

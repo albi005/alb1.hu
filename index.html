@@ -1,29 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<title>Albi</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<title>Albi</title>
+	</head>
 
-<body>
-	<div class="block" style="display: flex; justify-content: center; align-items: center; background-color: beige;">
-		<div style="display: block; text-align: center;">
-			<a href="https://github.com/albi005" class="hero-text">
-				hi
-			</a>
-			<p>
-				scroll down
-			</p>
+	<body>
+		<div class="block"
+			style="display: flex; justify-content: center; align-items: center; background-color: beige;">
+			<div style="display: block; text-align: center;">
+				<a href="https://github.com/albi005" class="hero-text" style="font-weight: 400;">
+					hi
+				</a>
+				<p>
+					scroll down
+				</p>
+			</div>
 		</div>
-	</div>
-	<div class="block" style="display: flex; justify-content: center; align-items: flex-end;">
-		that's it, bye
-	</div>
-</body>
-
+		<div class="block" style="height: auto; min-height: 100vh;">
+			<div class="content">
+				Stuff I made:
+				<ul class="work">
+					<li>
+						🦒 The <a href="https://dishelps.azurewebsites.net/">DisHelps</a> app, that includes a
+						<a href="https://dot.net/maui">.NET MAUI</a> cross-platform mobile app
+						and an <a href="https://asp.net">ASP.NET Core Web API</a>.
+						The server is hosted on
+						<a href="https://azure.microsoft.com/services/app-service/">
+							Azure App Service
+						</a>
+						and persists data in an
+						<a href="https://azure.microsoft.com/services/sql-database/">Azure SQL</a>
+						database
+						using <a href="https://learn.microsoft.com/ef/core/">Entity Framework Core</a>.
+						Static content, like the knowledge base can be edited
+						using the <a href="https://piranhacms.org/">Piranha CMS</a> interface on the web.
+						Authentication is handled using
+						<a
+							href="https://azure.microsoft.com/services/active-directory/external-identities/b2c/">
+							Azure Active Directory B2C</a>.
+					</li>
+					<li>
+						🎨
+						<a href="https://github.com/albi005/MaterialColorUtilities/">
+							MaterialColorUtilities:
+						</a>
+						C# implementation of Google's Material color utilities with
+						<img alt="thousands of downloads" height="16"
+							src="https://img.shields.io/nuget/dt/MaterialColorUtilities?color=ccc&style=flat-square">
+						on <a href="https://nuget.org/packages/MaterialColorUtilities">NuGet</a>.
+						Includes all of the algorithms required for adding Material You colors to a .NET app.
+						Can be used to generate a color palette with perfect contrasts from a single color
+						extracted from an
+						image.
+					</li>
+					<li>
+						🖼️
+						<a href="https://csaka.de">Blace:</a>
+						Reddit's <a href="https://reddit.com/r/place">r/place</a> recreated with
+						<a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor
+							WebAssembly
+						</a> as the client,
+						<a href="https://asp.net">ASP.NET</a> for the server and
+						<a href="https://dotnet.microsoft.com/apps/aspnet/signalr">
+							SignalR
+						</a> for real-time communication between them.
+						For the source code, click <a href="https://github.com/albi005/Blace">here</a>.
+					</li>
+					<li>
+						🏡
+						<a href="https://keletikuria.azurewebsites.net/">Keleti Kúria:</a>
+						A simple
+						<a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor Server</a>
+						website for a mansion in Hungary.
+						Users can learn about the mansion's history, see photos, check its availability and
+						book it.
+						Content is stored and edited using <a href="https://piranhacms.org/">Piranha CMS</a>.
+						Authentication is handled by
+						<a href="https://learn.microsoft.com/aspnet/core/security/authentication/identity">
+							ASP.NET Core Identity</a>.
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="block" style="height: auto; background-color: #f3f3fa;">
+			<div class="content">
+				Links:
+				<ul style="list-style: lower-greek">
+					<li>
+						<a href="https://github.com/albi005">GitHub</a>
+					</li>
+					<li>
+						<a href="mailto:hi@alb1.hu">Email</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/albertrn_">Twitter</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/albertrn/">LinkedIn</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
 </html>
