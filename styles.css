@@ -1,16 +1,23 @@
 body {
 	margin: 0;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Cascadia Code';
+	font-weight: 200;
 }
 
 a {
 	color: brown;
 	text-decoration: none;
-	font-weight: 600;
+	font-weight: 360;
+	transition: color 0.1s, font-weight 0.1s;
 }
 
 a:hover {
 	color: #000;
+	font-weight: 700;
+}
+
+a:active {
+	font-weight: 200;
 }
 
 .block {
@@ -28,11 +35,11 @@ a:hover {
 
 .hero-text {
 	color: brown;
-	font-size: 72px;
+	font-size: 96px;
 	text-decoration: none;
+	font-weight: 200;
 }
 
-/* Hide scrollbar */
 body::-webkit-scrollbar {
 	display: none;
 }
