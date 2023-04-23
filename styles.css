@@ -40,15 +40,6 @@ a:active {
 	font-weight: 200;
 }
 
-body::-webkit-scrollbar {
-	display: none;
-}
-
-body {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-
 .work > li{
 	list-style-type: none;
 	margin: 1em 0;
