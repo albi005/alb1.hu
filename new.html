@@ -1,68 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="theme.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="theme.css" />
     <title>Albi</title>
     <style>
-        @font-face {
-            font-family: 'Cascadia Code';
-            src: url('CascadiaCode.woff2') format('woff2');
-            font-weight: 200..700;
-            font-display: swap;
-        }
+      @font-face {
+        font-family: "Cascadia Code";
+        src: url("CascadiaCode.woff2") format("woff2");
+        font-display: swap;
+      }
     </style>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
-        
-        html {
-            background-color: var(--md-sys-color-surface);
-            color: var(--md-sys-color-on-surface);
-            font-family: 'Cascadia Code', monospace;
-            font-weight: 200;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        background-color: var(--md-sys-color-background);
+        color: var(--md-sys-color-on-surface);
+        font-family: "Cascadia Code", "Courier New", Courier, monospace;
+        font-weight: 200;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        padding: 16px 0;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: calc(100vh - 32px);
+        padding: 16px;
+      }
+
+      main {
+        flex: 1;
+        font-weight: 900;
+        font-size: large;
+        max-width: 500px;
+        margin: 0 auto;
+        padding-bottom: 20%;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 40% 0;
+      }
+
+      article {
+        padding: 20% 0;
+      }
+
+      h2 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+        font-weight: 100;
+      }
+
+      a {
+        color: var(--md-sys-color-primary);
+        text-decoration: none;
+        font-weight: 400;
+      }
+
+      a.active {
+        font-weight: 900;
+      }
     </style>
-</head>
-<body>
-    <div style="display: flex; width: 100%; height:100%; justify-content: center; align-items: center">
-        <div>
-            Projects
+  </head>
+  <body>
+    <div style="display: flex">
+      <div>
+        <div style="position: sticky; top: 0">
+          <nav>
             <ul>
-                <li>DisHelps</li>
-                <li>MaterialColorUtilities</li>
-                <li>Menza</li>
-                <li>Blace</li>
-                <li>Keleti Kúria</li>
-                <li>DomainSearch</li>
+              <li>
+                <a href="#dishelps">DisHelps</a>
+              </li>
+              <li>
+                <a href="#materialcolorutilities">MaterialColorUtilities</a>
+              </li>
+              <li>
+                <a href="#menza">Menza</a>
+              </li>
+              <li>
+                <a href="#blace">Blace</a>
+              </li>
+              <li>
+                <a href="#keletikuria">Keleti Kúria</a>
+              </li>
             </ul>
+          </nav>
         </div>
-        <div style="flex-grow: 1; text-align: center">
-            Albi
-        </div>
-        <div style="text-align: end">
-            Links
-            <ul >
-                <li>Github</li>
-                <li>Email</li>
-                <li>LinkedIn</li>
-                <li>Mastodon</li>
-                <li>Twitter</li>
+      </div>
+      <main>
+        <h1>Albi</h1>
+
+        <article id="dishelps">
+          <h2>DisHelps</h2>
+          <p>
+            The DisHelps app, that includes a .NET MAUI cross-platform mobile
+            app and an ASP.NET Core Web API. The server is hosted on Azure App
+            Service and persists data in an Azure SQL database using Entity
+            Framework Core. Static content, like the knowledge base can be
+            edited using the Piranha CMS interface on the web. Authentication is
+            handled using Azure Active Directory B2C.
+          </p>
+        </article>
+
+        <article id="materialcolorutilities">
+          <h2>MaterialColorUtilities</h2>
+          <p>
+            C# implementation of Google's Material color utilities with
+            thousands of downloads on NuGet. Includes all of the algorithms
+            required for adding Material You colors to a .NET app. Can be used
+            to generate a color palette with perfect contrasts from a single
+            color extracted from an image.
+          </p>
+        </article>
+
+        <article id="menza">
+          <h2>Menza</h2>
+          <p>
+            A website where students can quickly check what is for lunch and
+            vote on it. Made with Blazor WebAssembly and some JavaScript. The
+            source code is available here.
+          </p>
+        </article>
+
+        <article id="blace">
+          <h2>Blace</h2>
+          <p>
+            Reddit's r/place recreated with Blazor WebAssembly as the client,
+            ASP.NET for the server and SignalR for real-time communication
+            between them. For the source code, click here.
+          </p>
+        </article>
+
+        <article id="keletikuria">
+          <h2>Keleti Kúria</h2>
+          <a href="https://keletikuria.azurewebsites.net">keletikuria.azurewebsites.net</a>
+          <p>
+            A simple Blazor Server website for a mansion in Hungary. Users can
+            learn about the mansion's history, see photos, check its
+            availability and book it. Content is stored and edited using Piranha
+            CMS. Authentication is handled by ASP.NET Core Identity.
+          </p>
+        </article>
+      </main>
+      <div>
+        <div style="position: sticky; top: 0">
+          <nav>
+            <ul>
+              <li>GitHub</li>
+              <li>Email</li>
+              <li>LinkedIn</li>
             </ul>
+          </nav>
         </div>
+      </div>
     </div>
-    sldkfja;lsdkfj
-</body>
+
+    <script>
+      window.onload = function () {
+        var anchors = document.querySelectorAll('a[href^="#"]');
+
+        for (var i = 0; i < anchors.length; i++) {
+          anchors[i].addEventListener("mouseover", function (event) {
+            event.preventDefault(); // Prevent the default behavior
+
+            // Get the target element's ID from the href attribute
+            var targetId = this.getAttribute("href").substr(1);
+
+            // Update the URL without reloading the page
+            history.pushState(null, "", "#" + targetId);
+
+            // Scroll to the target element
+            document.getElementById(targetId).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        }
+      };
+    </script>
+  </body>
 </html>
