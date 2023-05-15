@@ -1,0 +1,191 @@
+﻿<Colors />
+<Styles />
+<style>
+    @@font-face {
+        font-family: "Cascadia Code";
+        src: url("CascadiaCode.woff2") format("woff2");
+        font-display: swap;
+    }
+</style>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        background-color: var(--md-sys-color-background);
+        color: var(--md-sys-color-on-surface);
+        font-family: "Cascadia Code", "Courier New", Courier, monospace;
+        font-weight: 200;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        padding: 16px 0;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: calc(100vh - 32px);
+        padding: 16px;
+    }
+
+    main {
+        flex: 1;
+        font-weight: 900;
+        font-size: large;
+        max-width: 500px;
+        margin: 0 auto;
+        padding-bottom: 30%;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 40% 0;
+    }
+
+    article {
+        padding: 20% 0;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        font-weight: 100;
+    }
+
+    a {
+        color: var(--md-sys-color-primary);
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+    a:hover {
+        font-weight: 700;
+    }
+    
+    a:active {
+        font-weight: 200;
+    }
+    
+    .tertiary a {
+        color: var(--md-sys-color-tertiary);
+    }
+</style>
+<div style="display: flex">
+    <div>
+        <div style="position: sticky; top: 0">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#dishelps">DisHelps</a>
+                    </li>
+                    <li>
+                        <a href="#materialcolorutilities">MaterialColorUtilities</a>
+                    </li>
+                    <li>
+                        <a href="#menza">Menza</a>
+                    </li>
+                    <li>
+                        <a href="#blace">Blace</a>
+                    </li>
+                    <li>
+                        <a href="#keletikuria">Keleti Kúria</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <main>
+        <h1>Albi</h1>
+
+        <article id="dishelps">
+            <h2>DisHelps</h2>
+            <Web Link="dishelps.org" />
+            <p>
+                The DisHelps app, that includes a .NET MAUI cross-platform mobile
+                app and an ASP.NET Core Web API. The server is hosted on Azure App
+                Service and persists data in an Azure SQL database using Entity
+                Framework Core. Static content, like the knowledge base can be
+                edited using the Piranha CMS interface on the web. Authentication is
+                handled using Azure Active Directory B2C.
+            </p>
+        </article>
+
+        <article id="materialcolorutilities">
+            <h2>MaterialColorUtilities</h2>
+            <GitHub Repo="albi005/MaterialColorUtilities" />
+            <Web Link="albi005.github.io/MaterialColorUtilities" />
+            <p>
+                C# implementation of Google's Material color utilities with
+                thousands of downloads on NuGet. Includes all of the algorithms
+                required for adding Material You colors to a .NET app. Can be used
+                to generate a color palette with perfect contrasts from a single
+                color extracted from an image.
+            </p>
+        </article>
+
+        <article id="menza">
+            <h2>Menza</h2>
+            <Web Link="menza.alb1.hu" />
+            <GitHub Repo="albi005/Menza" />
+            <p>
+                A website where students can quickly check what is for lunch and
+                vote on it. Made with Blazor WebAssembly and some JavaScript. The
+                source code is available here.
+            </p>
+        </article>
+
+        <article id="blace">
+            <h2>Blace</h2>
+            <Web Link="blace.alb1.hu" />
+            <GitHub Repo="albi005/Blace" />
+            <p>
+                Reddit's r/place recreated with Blazor WebAssembly as the client,
+                ASP.NET for the server and SignalR for real-time communication
+                between them. For the source code, click here.
+            </p>
+        </article>
+
+        <article id="keletikuria">
+            <h2>Keleti Kúria</h2>
+            <Web Link="keletikuria.azurewebsites.net" />
+            <p>
+                A simple Blazor Server website for a mansion in Hungary. Users can
+                learn about the mansion's history, see photos, check its
+                availability and book it. Content is stored and edited using Piranha
+                CMS. Authentication is handled by ASP.NET Core Identity.
+            </p>
+        </article>
+    </main>
+    <div>
+        <div style="position: sticky; top: 0" class="tertiary">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://github.com/albi005">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="mailto:hi@alb1.hu">Email</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/albertrn">LinkedIn</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

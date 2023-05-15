@@ -1,0 +1,40 @@
+﻿@page "/"
+@namespace Hello.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="favicon.ico">
+    <title>Albi</title>
+</head>
+<body>
+
+<component type="typeof(App)" render-mode="Static"/>
+
+<script>
+    window.onload = function () {
+        var anchors = document.querySelectorAll('a[href^="#"]');
+
+        for (var i = 0; i < anchors.length; i++) {
+            anchors[i].addEventListener("mouseover", function (event) {
+                event.preventDefault(); // Prevent the default behavior
+
+                // Get the target element's ID from the href attribute
+                var targetId = this.getAttribute("href").substr(1);
+
+                // Update the URL without reloading the page
+                history.pushState(null, "", "#" + targetId);
+
+                // Scroll to the target element
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: "auto",
+                });
+            });
+        }
+    };
+</script>
+</body>
+</html>
