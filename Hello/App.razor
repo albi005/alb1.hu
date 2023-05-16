@@ -42,16 +42,10 @@
 
     main {
         flex: 1;
-        font-weight: 900;
-        font-size: large;
-        max-width: 500px;
+        font-size: 18px;
+        max-width: 512px;
         margin: 0 auto;
         padding-bottom: 30%;
-    }
-
-    h1 {
-        text-align: center;
-        margin: 40% 0;
     }
 
     article {
@@ -59,7 +53,7 @@
     }
 
     h2 {
-        margin: 0;
+        margin: 16px 0 0 0;
     }
 
     p {
@@ -110,13 +104,16 @@
         </div>
     </div>
     <main>
-        <h1>Albi</h1>
+        <div style="margin: 40% 0; text-align: center">
+            <h1>Albi</h1>
+            Albert Ragány-Németh
+        </div>
 
         <article id="dishelps">
             <h2>DisHelps</h2>
-            <Web Link="dishelps.org" />
-            <PlayStore Text="Coming soon" />
-            <AppStore Text="Coming soon" />
+            <Web Link="dishelps.org"/>
+            <PlayStore Text="Coming soon"/>
+            <AppStore Text="Coming soon"/>
             <p>
                 The DisHelps app, that includes a .NET MAUI cross-platform
                 mobile app and an ASP.NET Core web server. The server is
@@ -129,10 +126,10 @@
 
         <article id="materialcolorutilities">
             <h2>MaterialColorUtilities</h2>
-            <GitHub Repo="albi005/MaterialColorUtilities" />
-            <Web Link="albi005.github.io/MaterialColorUtilities" />
-            <NuGet Package="MaterialColorUtilities" />
-            <NuGet Package="MaterialColorUtilities.Maui" />
+            <GitHub Repo="albi005/MaterialColorUtilities"/>
+            <Web Link="albi005.github.io/MaterialColorUtilities"/>
+            <NuGet Package="MaterialColorUtilities"/>
+            <NuGet Package="MaterialColorUtilities.Maui"/>
             <p>
                 C# implementation of Google's Material color utilities with
                 thousands of downloads on NuGet. Includes all of the algorithms
@@ -143,30 +140,31 @@
         </article>
 
         <article id="menza">
+            <Preview Src="https://menza.alb1.hu/?preview" />
             <h2>Menza</h2>
-            <Web Link="menza.alb1.hu" />
-            <GitHub Repo="albi005/Menza" />
+            <Web Link="menza.alb1.hu"/>
+            <GitHub Repo="albi005/Menza"/>
             <p>
                 A website where students can quickly check what is for lunch and
                 vote on it. Made with Blazor WebAssembly and some JavaScript.
-                The source code is available here.
             </p>
         </article>
 
         <article id="blace">
+            <iframe style="width: 100%; aspect-ratio: 16 / 9; border-radius: 32px; border: none" src="https://blace.alb1.hu" loading="lazy"></iframe>
             <h2>Blace</h2>
-            <Web Link="blace.alb1.hu" />
-            <GitHub Repo="albi005/Blace" />
+            <Web Link="blace.alb1.hu"/>
+            <GitHub Repo="albi005/Blace"/>
             <p>
                 Reddit's r/place recreated with Blazor WebAssembly as the
                 client, ASP.NET for the server and SignalR for real-time
-                communication between them. For the source code, click here.
+                communication between them.
             </p>
         </article>
 
         <article id="keletikuria">
             <h2>Keleti Kúria</h2>
-            <Web Link="keletikuria.azurewebsites.net" />
+            <Web Link="keletikuria.azurewebsites.net"/>
             <p>
                 A simple Blazor Server website for a mansion in Hungary. Users
                 can learn about the mansion's history, see photos, check its
