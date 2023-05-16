@@ -76,11 +76,11 @@
     a:hover {
         font-weight: 700;
     }
-    
+
     a:active {
         font-weight: 200;
     }
-    
+
     .tertiary a {
         color: var(--md-sys-color-tertiary);
     }
@@ -115,13 +115,15 @@
         <article id="dishelps">
             <h2>DisHelps</h2>
             <Web Link="dishelps.org" />
+            <PlayStore Text="Coming soon" />
+            <AppStore Text="Coming soon" />
             <p>
-                The DisHelps app, that includes a .NET MAUI cross-platform mobile
-                app and an ASP.NET Core Web API. The server is hosted on Azure App
-                Service and persists data in an Azure SQL database using Entity
+                The DisHelps app, that includes a .NET MAUI cross-platform
+                mobile app and an ASP.NET Core web server. The server is
+                self-hosted and persists data in an SQLite database using Entity
                 Framework Core. Static content, like the knowledge base can be
-                edited using the Piranha CMS interface on the web. Authentication is
-                handled using Azure Active Directory B2C.
+                edited using the Piranha CMS interface on the web.
+                Authentication is handled using Azure Active Directory B2C.
             </p>
         </article>
 
@@ -129,12 +131,14 @@
             <h2>MaterialColorUtilities</h2>
             <GitHub Repo="albi005/MaterialColorUtilities" />
             <Web Link="albi005.github.io/MaterialColorUtilities" />
+            <NuGet Package="MaterialColorUtilities" />
+            <NuGet Package="MaterialColorUtilities.Maui" />
             <p>
                 C# implementation of Google's Material color utilities with
                 thousands of downloads on NuGet. Includes all of the algorithms
-                required for adding Material You colors to a .NET app. Can be used
-                to generate a color palette with perfect contrasts from a single
-                color extracted from an image.
+                required for adding Material You colors to a .NET app. Can be
+                used to generate a color palette with perfect contrasts from a
+                single color extracted from an image.
             </p>
         </article>
 
@@ -144,8 +148,8 @@
             <GitHub Repo="albi005/Menza" />
             <p>
                 A website where students can quickly check what is for lunch and
-                vote on it. Made with Blazor WebAssembly and some JavaScript. The
-                source code is available here.
+                vote on it. Made with Blazor WebAssembly and some JavaScript.
+                The source code is available here.
             </p>
         </article>
 
@@ -154,9 +158,9 @@
             <Web Link="blace.alb1.hu" />
             <GitHub Repo="albi005/Blace" />
             <p>
-                Reddit's r/place recreated with Blazor WebAssembly as the client,
-                ASP.NET for the server and SignalR for real-time communication
-                between them. For the source code, click here.
+                Reddit's r/place recreated with Blazor WebAssembly as the
+                client, ASP.NET for the server and SignalR for real-time
+                communication between them. For the source code, click here.
             </p>
         </article>
 
@@ -164,10 +168,10 @@
             <h2>Keleti Kúria</h2>
             <Web Link="keletikuria.azurewebsites.net" />
             <p>
-                A simple Blazor Server website for a mansion in Hungary. Users can
-                learn about the mansion's history, see photos, check its
-                availability and book it. Content is stored and edited using Piranha
-                CMS. Authentication is handled by ASP.NET Core Identity.
+                A simple Blazor Server website for a mansion in Hungary. Users
+                can learn about the mansion's history, see photos, check its
+                availability and book it. Content is stored and edited using
+                Piranha CMS. Authentication is handled by ASP.NET Core Identity.
             </p>
         </article>
     </main>
@@ -182,7 +186,7 @@
                         <a href="mailto:hi@alb1.hu">Email</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/albertrn">LinkedIn</a>
+                        <a href="https://linkedin.com/in/albertrn">LinkedIn</a>
                     </li>
                 </ul>
             </nav>
