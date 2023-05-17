@@ -13,6 +13,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.MapFallbackToPage("/_Host");
+app.MapRazorPages();
 
 app.Run();

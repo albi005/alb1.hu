@@ -1,84 +1,5 @@
 ﻿<Colors />
 <Styles />
-<style>
-    @@font-face {
-        font-family: "Cascadia Code";
-        src: url("CascadiaCode.woff2") format("woff2");
-        font-display: swap;
-    }
-</style>
-<style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        background-color: var(--md-sys-color-background);
-        color: var(--md-sys-color-on-surface);
-        font-family: "Cascadia Code", "Courier New", Courier, monospace;
-        font-weight: 200;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        padding: 16px 0;
-    }
-
-    nav {
-        position: sticky;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        height: calc(100vh - 32px);
-        padding: 16px;
-    }
-
-    main {
-        flex: 1;
-        font-size: 18px;
-        max-width: 512px;
-        margin: 0 auto;
-        padding-bottom: 30%;
-    }
-
-    article {
-        padding: 20% 0;
-    }
-
-    h2 {
-        margin: 16px 0 0 0;
-    }
-
-    p {
-        margin: 0;
-        font-weight: 100;
-    }
-
-    a {
-        color: var(--md-sys-color-primary);
-        text-decoration: none;
-        font-weight: 400;
-    }
-
-    a:hover {
-        font-weight: 700;
-    }
-
-    a:active {
-        font-weight: 200;
-    }
-
-    .tertiary a {
-        color: var(--md-sys-color-tertiary);
-    }
-</style>
 <div style="display: flex">
     <div>
         <div style="position: sticky; top: 0">
@@ -104,74 +25,108 @@
         </div>
     </div>
     <main>
-        <div style="margin: 40% 0; text-align: center">
+        <div style="margin: calc(50vh - 128px) 0; text-align: center">
             <h1>Albi</h1>
             Albert Ragány-Németh
         </div>
 
+        <h2 id="projects">
+            Projects
+        </h2>
+        
         <article id="dishelps">
-            <h2>DisHelps</h2>
+            <DisHelpsThumbnail />
+            <h3>DisHelps</h3>
             <Web Link="dishelps.org"/>
             <PlayStore Text="Coming soon"/>
             <AppStore Text="Coming soon"/>
             <p>
-                The DisHelps app, that includes a .NET MAUI cross-platform
-                mobile app and an ASP.NET Core web server. The server is
-                self-hosted and persists data in an SQLite database using Entity
-                Framework Core. Static content, like the knowledge base can be
-                edited using the Piranha CMS interface on the web.
-                Authentication is handled using Azure Active Directory B2C.
+                Mobile app for children with learning disabilities.
+                Provides a place where they can share their experiences,
+                learn about their condition and find help.
             </p>
+            <h4>Technologies used</h4>
+            <ul>
+                <li>.NET MAUI</li>
+                <li>ASP.NET Core web APIs and Razor Pages</li>
+                <li>Piranha CMS</li>
+                <li>Entity Framework</li>
+                <li>Azure Active Directory B2C</li>
+            </ul>
         </article>
 
         <article id="materialcolorutilities">
-            <Preview Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive" />
-            <h2>MaterialColorUtilities</h2>
+            <Preview Height="352" Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive" />
+            <h3>MaterialColorUtilities</h3>
             <GitHub Repo="albi005/MaterialColorUtilities"/>
             <Web Link="albi005.github.io/MaterialColorUtilities"/>
             <NuGet Package="MaterialColorUtilities"/>
             <NuGet Package="MaterialColorUtilities.Maui"/>
             <p>
-                C# implementation of Google's Material color utilities with
-                thousands of downloads on NuGet. Includes all of the algorithms
-                required for adding Material You colors to a .NET app. Can be
-                used to generate a color palette with perfect contrasts from a
-                single color extracted from an image.
+                C# implementation of Google's Material You color algorithms.
+                Includes multiple image quantizers and converter functions for a new color space.
+                Can be used to generate a color palette with perfect contrasts from
+                any color extracted from an image.
+            </p>
+            <p>
+                Try changing the seed color or style in the above iframe.
+                You can even try out extracting a color from an image
+                by clicking the wallpaper button.
             </p>
         </article>
 
         <article id="menza">
             <Preview Src="https://menza.alb1.hu/?preview" />
-            <h2>Menza</h2>
+            <h3>Menza</h3>
             <Web Link="menza.alb1.hu"/>
             <GitHub Repo="albi005/Menza"/>
             <p>
-                A website where students can quickly check what is for lunch and
-                vote on it. Made with Blazor WebAssembly and some JavaScript.
+                A website where students can quickly check what is for lunch
+                and rate it.
             </p>
+            <h4>Technologies used</h4>
+            <ul>
+                <li>Blazor WebAssembly</li>
+                <li>ASP.NET Core Web API</li>
+                <li>Entity Framework</li>
+                <li>Firebase Auth</li>
+            </ul>
         </article>
 
         <article id="blace">
             <Preview Src="https://blace.alb1.hu" />
-            <h2>Blace</h2>
+            <h3>Blace</h3>
             <Web Link="blace.alb1.hu"/>
             <GitHub Repo="albi005/Blace"/>
             <p>
-                Reddit's r/place recreated with Blazor WebAssembly as the
-                client, ASP.NET for the server and SignalR for real-time
-                communication between them.
+                Reddit's r/place recreated with Blazor WebAssembly. Players can
+                place pixels one-by-one on a 100x100 canvas. The canvas is updated in
+                real-time with SignalR.
             </p>
+            <h4>Technologies used</h4>
+            <ul>
+                <li>Blazor WebAssembly</li>
+                <li>ASP.NET</li>
+                <li>Azure CosmosDB</li>
+                <li>SignalR</li>
+            </ul>
         </article>
 
         <article id="keletikuria">
-            <h2>Keleti Kúria</h2>
+            <h3>Keleti Kúria</h3>
             <Web Link="keletikuria.azurewebsites.net"/>
             <p>
-                Blazor Server website for a mansion in Hungary. Visitors
+                Website for a mansion in Hungary. Visitors
                 can learn about the mansion's history, see photos, check its
-                availability and make bookings. Content is stored and can be edited using
-                Piranha CMS. Authentication is handled by ASP.NET Core Identity.
+                availability and make bookings.
             </p>
+            <h4>Technologies used</h4>
+            <ul>
+                <li>Blazor Server</li>
+                <li>ASP.NET Core Identity</li>
+                <li>Piranha CMS</li>
+                <li>Entity Framework</li>
+            </ul>
         </article>
     </main>
     <div>
