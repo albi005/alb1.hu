@@ -35,6 +35,11 @@
             });
         }
     };
+    
+    window.addEventListener("message", function (event) {
+        // What XSS?
+        document.getElementById('colors').innerHTML = event.data;
+    });
 </script>
 </body>
 </html>
