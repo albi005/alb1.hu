@@ -16,14 +16,14 @@
 
 <script>
     window.onload = function () {
-        var anchors = document.querySelectorAll('a[href^="#"]');
+        const anchors = document.querySelectorAll('a[href^="#"]');
 
-        for (var i = 0; i < anchors.length; i++) {
+        for (let i = 0; i < anchors.length; i++) {
             anchors[i].addEventListener("mouseover", function (event) {
                 event.preventDefault(); // Prevent the default behavior
 
                 // Get the target element's ID from the href attribute
-                var targetId = this.getAttribute("href").substr(1);
+                const targetId = this.getAttribute("href").substr(1);
 
                 // Update the URL without reloading the page
                 history.pushState(null, "", "#" + targetId);
@@ -34,6 +34,29 @@
                 });
             });
         }
+        
+        const previews = document.querySelectorAll('div.thumbnail[src]');
+        function replaceDivWithIframe(div) {
+            const iframe = document.createElement('iframe');
+            iframe.src = div.getAttribute('src');
+            iframe.height = div.style.height;
+            iframe.className = div.className;
+            iframe.loading = 'lazy';
+            div.replaceWith(iframe);
+        }
+        function replacePreview(index) {
+            console.log(index);
+            if (index >= previews.length)
+                return;
+            const preview = previews[index];
+            replaceDivWithIframe(preview);
+            window.setTimeout(function () {
+                replacePreview(index + 1);
+            }, 2000);
+        }
+        window.setTimeout(function () {
+            replacePreview(0);
+        }, 2000);
     };
     
     window.addEventListener("message", function (event) {
