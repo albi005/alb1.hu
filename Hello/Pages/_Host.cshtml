@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿    @page "/"
 @namespace Hello.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -17,20 +17,30 @@
 
 <script>
     window.onload = function () {
+        const observer = new IntersectionObserver(entries => {
+            let set = false;
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute("id");
+                const anchor = document.querySelector(`nav li a[href="#${id}"]`);
+                anchor.classList.toggle("active", entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    window.history.replaceState({}, "", `#${id}`);
+                    set = true;
+                }
+            });
+            if (!set) window.history.replaceState({}, "", " ");
+        }, {
+            rootMargin: "-50% 0px",
+        });
         const anchors = document.querySelectorAll('a[href^="#"]');
-
+        const articles = document.querySelectorAll('article');
+        articles.forEach(x => observer.observe(x));
+        
         for (let i = 0; i < anchors.length; i++) {
-            anchors[i].addEventListener("mouseover", function (event) {
-                event.preventDefault(); // Prevent the default behavior
+            anchors[i].addEventListener("mouseover", function (e) {
+                const id = e.target.getAttribute("href").slice(1);
 
-                // Get the target element's ID from the href attribute
-                const targetId = this.getAttribute("href").substr(1);
-
-                // Update the URL without reloading the page
-                history.pushState(null, "", "#" + targetId);
-
-                // Scroll to the target element
-                document.getElementById(targetId).scrollIntoView({
+                document.getElementById(id).scrollIntoView({
                     behavior: "auto",
                 });
             });
