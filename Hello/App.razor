@@ -1,7 +1,7 @@
 ﻿<Colors />
 <Styles />
 <div style="display: flex">
-    <div>
+    <div class="hide-on-mobile">
         <div style="position: sticky; top: 0">
             <nav>
                 <ul>
@@ -29,6 +29,25 @@
             <h1>Albi</h1>
             Albert Ragány-Németh
         </div>
+        
+        <div class="show-on-mobile">
+            <div class="tertiary">
+                <nav style="text-align: center; position: unset; display: block; height: unset">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/albi005">GitHub</a>
+                        </li>
+                        <li>
+                            <a href="mailto:hi@alb1.hu">Email</a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/albertrn">LinkedIn</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
 
         <h2 id="projects">
             Projects
@@ -57,7 +76,7 @@
 
         <article id="materialcolorutilities">
             <Preview Height="352" Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive" />
-            <h3>MaterialColorUtilities</h3>
+            <h3 style="overflow-wrap: anywhere">MaterialColorUtilities</h3>
             <GitHub Repo="albi005/MaterialColorUtilities"/>
             <Web Link="albi005.github.io/MaterialColorUtilities"/>
             <NuGet Package="MaterialColorUtilities"/>
@@ -128,8 +147,18 @@
                 <li>Entity Framework</li>
             </ul>
         </article>
+        
+        <h2 id="other">Other</h2>
+        <div class="link-list" style="text-align: center">
+            <a href="https://github.com/albi005/alb1.hu">alb1.hu</a>
+            <a href="https://github.com/albi005/.config">~/.config</a>
+            <a href="https://github.com/albi005/NemesOnline">NemesOnline</a>
+            <a href="https://github.com/albi005/AdventOfCode2022">AdventOfCode2022</a>
+            <a href="https://github.com/albi005/LeetCode">LeetCode</a>
+            <a href="https://github.com/albi005/Erettsegi">Info érettségi</a>
+        </div>
     </main>
-    <div>
+    <div class="hide-on-mobile">
         <div style="position: sticky; top: 0" class="tertiary">
             <nav>
                 <ul>

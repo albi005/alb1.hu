@@ -40,7 +40,9 @@
         function replaceDivWithIframe(div) {
             const iframe = document.createElement('iframe');
             iframe.src = div.getAttribute('src');
-            iframe.height = div.style.height;
+            iframe.style.height = div.style.height;
+            iframe.style.width = div.style.width;
+            iframe.style.aspectRatio = div.style.aspectRatio;
             iframe.className = div.className;
             iframe.loading = 'lazy';
             div.replaceWith(iframe);
@@ -61,7 +63,10 @@
     };
     
     window.addEventListener("message", function (event) {
-        // What XSS?
+        if (event.origin !== "https://albi005.github.io") return;
+        if (!event.data.includes("--md-sys-color-primary")) return;
+        
+        // XSS who?
         document.getElementById('colors').innerHTML = event.data;
     });
 </script>

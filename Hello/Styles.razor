@@ -44,6 +44,12 @@
         margin: 0 auto;
         padding-bottom: 30%;
     }
+    
+    @@media (max-width: 768px) {
+        main {
+            padding: 16px;
+        }
+    }
 
     article {
         padding: 48px 0 128px 0;
@@ -89,6 +95,7 @@
         color: var(--md-sys-color-primary);
         text-decoration: none;
         font-weight: 360;
+        overflow-wrap: anywhere;
     }
 
     a:hover {
@@ -105,6 +112,11 @@
 
     .tertiary a {
         color: var(--md-sys-color-tertiary);
+    }
+    
+    .link-list a {
+        display: block;
+        margin: 16px 0;
     }
     
     .icon-link {
@@ -146,6 +158,20 @@
     
     #dishelps .thumbnail:hover #dishelps-logo {
         stroke-width: 7.2px;
+    }
+    
+    .show-on-mobile {
+        display: none;
+    }
+    
+    @@media (max-width: 768px) {
+        .show-on-mobile {
+            display: block;
+        }
+    
+        .hide-on-mobile {
+            display: none;
+        }
     }
 
 </style>

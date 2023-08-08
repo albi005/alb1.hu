@@ -1,4 +1,4 @@
-<div class="thumbnail" style="height: @(Height)px" src="@Src"></div>
+<div class="thumbnail" style="height: @(Height)px;@(Height != null ? "aspect-ratio: unset;" : null)" src="@Src"></div>
 
 @code {
     [Parameter]
