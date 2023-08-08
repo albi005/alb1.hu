@@ -30,21 +30,11 @@
             });
             if (!set) window.history.replaceState({}, "", " ");
         }, {
-            rootMargin: "-50% 0px",
+            rootMargin: "-30% 0px -70% 0px",
         });
         const anchors = document.querySelectorAll('a[href^="#"]');
         const articles = document.querySelectorAll('article');
         articles.forEach(x => observer.observe(x));
-        
-        for (let i = 0; i < anchors.length; i++) {
-            anchors[i].addEventListener("mouseover", function (e) {
-                const id = e.target.getAttribute("href").slice(1);
-
-                document.getElementById(id).scrollIntoView({
-                    behavior: "auto",
-                });
-            });
-        }
         
         const previews = document.querySelectorAll('div.thumbnail[src]');
         function replaceDivWithIframe(div) {
