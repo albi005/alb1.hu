@@ -1,63 +1,24 @@
 ﻿<Colors />
 <Styles />
-<div style="display: flex">
-    <div class="hide-on-mobile">
-        <div style="position: sticky; top: 0">
-            <nav>
-                <div style="font-weight: 0; margin-bottom: 8px; color: var(--md-sys-color-on-surface-variant)">
-                    projects:
-                </div>
-                <ul>
-                    <li>
-                        <a href="#dishelps">DisHelps</a>
-                    </li>
-                    <li>
-                        <a href="#materialcolorutilities">MaterialColorUtilities</a>
-                    </li>
-                    <li>
-                        <a href="#menza">Menza</a>
-                    </li>
-                    <li>
-                        <a href="#blace">Blace</a>
-                    </li>
-                    <li>
-                        <a href="#keletikuria">Keleti Kúria</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+<main>
+    <div style="margin: 96px 0 64px 0; text-align: center">
+        <h1><span style="font-weight: bold; display: block">Albert</span> Ragány-Németh</h1>
     </div>
-    <main>
-        <div style="margin: 96px 0 128px 0; text-align: center">
-            <h1>Albert<br/>Ragány-Németh</h1>
-            <p>Hi! I'm Albi and this is my website.</p>
-        </div>
         
-        <div class="show-on-mobile">
-            <div class="tertiary">
-                <nav style="text-align: center; position: unset; display: block; height: unset">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/albi005">GitHub</a>
-                        </li>
-                        <li>
-                            <a href="mailto:hi@alb1.hu">Email</a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/albertrn">LinkedIn</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <nav style="display: flex; gap: 64px; align-items: center; justify-content: center; margin-bottom: 64px">
+        <a href="https://github.com/albi005">GitHub</a>
+        <a href="mailto:hi@alb1.hu">Email</a>
+        <a href="https://linkedin.com/in/albertrn">LinkedIn</a>
+    </nav>
 
-        <h2 id="projects">
-            Projects
-        </h2>
-        <p style="text-align: center; font-size: smaller">Some of the things I made or worked on</p>
-        
+    <h2 id="projects" style="font-weight: 400">
+        Projects
+    </h2>
+    <p style="text-align: center; font-size: smaller">Some of the things I made or worked on</p>
+
+    <div class="projects-grid">
         <article id="dishelps">
-            <DisHelpsThumbnail />
+            <DisHelpsThumbnail/>
             <h3>DisHelps</h3>
             <Web Link="dishelps.org"/>
             <PlayStore Text="Coming soon"/>
@@ -67,7 +28,7 @@
                 Provides a place where they can share their experiences,
                 get to know more about their condition and find help.
             </p>
-            <h4>Stack</h4>
+            <h4>Built with</h4>
             <ul>
                 <li>.NET MAUI (previously Xamarin.Forms)</li>
                 <li>ASP.NET Core web APIs and Razor Pages</li>
@@ -76,9 +37,27 @@
                 <li>Azure Active Directory B2C</li>
             </ul>
         </article>
-
+        
+        <article id="keletikuria">
+            <KeletiKuriaThumbnail/>
+            <h3>Keleti Kúria</h3>
+            <Web Link="keletikuria.hu"/>
+            <p>
+                Website for a renovated mansion. Visitors
+                can learn about the mansion's past, look at photos, check its
+                availability and make bookings.
+            </p>
+            <h4>Built with</h4>
+            <ul>
+                <li>Blazor</li>
+                <li>ASP.NET Core Identity</li>
+                <li>Piranha CMS</li>
+                <li>Entity Framework</li>
+            </ul>
+        </article>
+        
         <article id="materialcolorutilities">
-            <Preview Height="352" Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive" />
+            <Preview Height="352" Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive"/>
             <h3 style="overflow-wrap: anywhere">MaterialColorUtilities</h3>
             <GitHub Repo="albi005/MaterialColorUtilities"/>
             <Web Link="albi005.github.io/MaterialColorUtilities"/>
@@ -87,18 +66,12 @@
             <p>
                 C# implementation of Google's Material You color algorithms.
                 Includes multiple image quantizers and converter functions for a new color space.
-                Can be used to generate a color palette with perfect contrasts from
-                any color extracted from an image.
-            </p>
-            <p>
-                Try changing the seed color or style in the above iframe.
-                You can even try out extracting a color from an image
-                by clicking the wallpaper button.
+                Can be used to generate a color palette from colors in an image.
             </p>
         </article>
 
         <article id="menza">
-            <Preview Src="https://menza.alb1.hu/?preview" />
+            <Preview Src="https://menza.alb1.hu/?preview"/>
             <h3>Menza</h3>
             <Web Link="menza.alb1.hu"/>
             <GitHub Repo="albi005/Menza"/>
@@ -106,7 +79,7 @@
                 A website where students can quickly check what is for lunch
                 and rate it.
             </p>
-            <h4>Stack</h4>
+            <h4>Built with</h4>
             <ul>
                 <li>Blazor WebAssembly</li>
                 <li>ASP.NET Core Web API</li>
@@ -116,7 +89,7 @@
         </article>
 
         <article id="blace">
-            <Preview Src="https://blace.alb1.hu/?preview" />
+            <Preview Src="https://blace.alb1.hu/?preview"/>
             <h3>Blace</h3>
             <Web Link="blace.alb1.hu"/>
             <GitHub Repo="albi005/Blace"/>
@@ -125,7 +98,7 @@
                 place pixels one-by-one on a 100x100 canvas. The canvas is updated in
                 real-time with SignalR.
             </p>
-            <h4>Stack</h4>
+            <h4>Built with</h4>
             <ul>
                 <li>Blazor WebAssembly</li>
                 <li>ASP.NET</li>
@@ -133,53 +106,18 @@
                 <li>SignalR</li>
             </ul>
         </article>
-
-        <article id="keletikuria">
-            <KeletiKuriaThumbnail />
-            <h3>Keleti Kúria</h3>
-            <Web Link="keletikuria.hu"/>
-            <p>
-                Website for a recently renovated mansion. Visitors
-                can learn about the mansion's past, look at photos, check its
-                availability and make bookings.
-            </p>
-            <h4>Stack</h4>
-            <ul>
-                <li>Blazor</li>
-                <li>ASP.NET Core Identity</li>
-                <li>Piranha CMS</li>
-                <li>Entity Framework</li>
-            </ul>
-        </article>
-        
-        <h2 id="other">Other</h2>
-        <div class="link-list" style="text-align: center">
-            <a href="https://github.com/albi005/alb1.hu">alb1.hu</a>
-            <a href="https://github.com/albi005/.config">~/.config</a>
-            <a href="https://github.com/albi005/NemesOnline">NemesOnline</a>
-            <a href="https://github.com/albi005/AdventOfCode2022">AdventOfCode2022</a>
-            <a href="https://github.com/albi005/LeetCode">LeetCode</a>
-            <a href="https://github.com/albi005/Erettsegi">Info érettségi</a>
-        </div>
-        <div style="text-align: center; margin-top: 69vh; font-size: small">
-            I use <a href="https://nixos.org">NixOS</a> btw
-        </div>
-    </main>
-    <div class="hide-on-mobile">
-        <div style="position: sticky; top: 0" class="tertiary">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://github.com/albi005">GitHub</a>
-                    </li>
-                    <li>
-                        <a href="mailto:hi@alb1.hu">Email</a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com/in/albertrn">LinkedIn</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
     </div>
-</div>
+        
+    <h2 id="other">Other</h2>
+    <div class="link-list" style="text-align: center">
+        <a href="https://github.com/albi005/alb1.hu">alb1.hu</a>
+        <a href="https://github.com/albi005/.config">~/.config</a>
+        <a href="https://github.com/albi005/NemesOnline">NemesOnline</a>
+        <a href="https://github.com/albi005/AdventOfCode2022">AdventOfCode2022</a>
+        <a href="https://github.com/albi005/LeetCode">LeetCode</a>
+        <a href="https://github.com/albi005/Erettsegi">Info érettségi</a>
+    </div>
+    <div style="text-align: center; margin-top: 49vh; font-size: small">
+        I use <a href="https://github.com/albi005/.config/">NixOS</a> btw
+    </div>
+</main>

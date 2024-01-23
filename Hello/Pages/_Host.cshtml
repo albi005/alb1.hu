@@ -11,34 +11,18 @@
     <link rel="icon" href="favicon.ico">
     <link rel="me" href="https://dotnet.social/@@albi">
     <title>Albert Ragány-Németh</title>
-    <link href="Hello.styles.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="colors.css" rel="stylesheet">
     <component type="typeof(HeadOutlet)" render-mode="Static"/>
 </head>
 <body>
 
 <component type="typeof(App)" render-mode="Static"/>
 
+<style id="colors"></style>
+
 <script>
     window.onload = function () {
-        const observer = new IntersectionObserver(entries => {
-            let set = false;
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute("id");
-                const anchor = document.querySelector(`nav li a[href="#${id}"]`);
-                anchor.classList.toggle("active", entry.isIntersecting);
-                if (entry.isIntersecting) {
-                    window.history.replaceState({}, "", `#${id}`);
-                    set = true;
-                }
-            });
-            if (!set) window.history.replaceState({}, "", " ");
-        }, {
-            rootMargin: "-30% 0px -70% 0px",
-        });
-        const anchors = document.querySelectorAll('a[href^="#"]');
-        const articles = document.querySelectorAll('article');
-        articles.forEach(x => observer.observe(x));
-        
         const previews = document.querySelectorAll('div.thumbnail[src]');
         function replaceDivWithIframe(div) {
             const iframe = document.createElement('iframe');

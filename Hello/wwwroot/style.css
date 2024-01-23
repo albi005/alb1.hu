@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "Cascadia Code";
+    src: url("CascadiaCode.woff2") format("woff2");
+    font-display: swap;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface);
+    font-family: "Cascadia Code", "Courier New", Courier, monospace;
+    font-weight: 200;
+}
+
+main {
+    flex: 1;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 16px;
+    }
+}
+
+article {
+    padding: 0 0 32px 0;
+}
+
+article ul {
+    color: var(--md-sys-color-on-surface-variant)
+}
+
+h1 {
+    font-size: 48px;
+    margin: 16px;
+    text-align: center;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: 32px;
+    margin: 16px 0 0 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 28px;
+    margin: 16px 0 0 0;
+}
+
+h4 {
+    font-size: 16px;
+    margin: 16px 0 0 0;
+    font-weight: 360;
+}
+
+ul {
+    margin: 0;
+}
+
+p {
+    margin: 16px 0;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 360;
+    overflow-wrap: anywhere;
+    transition: font-weight 0.15s;
+}
+
+a:hover {
+    font-weight: 700;
+}
+
+a.active {
+    font-weight: 700;
+}
+
+a:active {
+    font-weight: 200;
+}
+
+.tertiary a {
+    color: var(--md-sys-color-tertiary);
+}
+
+.link-list a {
+    display: block;
+    margin: 16px 0;
+}
+
+.icon-link {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.icon-link svg {
+    height: 24px;
+    fill: var(--md-sys-color-secondary);
+}
+
+.icon-link a {
+    color: var(--md-sys-color-secondary);
+    text-decoration: none;
+    font-size: 16px;
+    max-lines: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 1 / .69;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+    border: none;
+}
+
+div.thumbnail {
+    background-color: var(--md-sys-color-secondary-container);
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+    svg {
+        display: block;
+    }
+}
+
+#dishelps-logo {
+    transition: stroke-width 0.1s ease-in-out;
+}
+
+#dishelps .thumbnail:hover #dishelps-logo {
+    stroke-width: 7.2px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 16px;
+    margin: 8px;
+}
+
+#keletikuria .thumbnail {
+    .logo {
+        stroke: var(--md-sys-color-on-primary-container);
+    }
+
+    text {
+        font-family: "Ibarra Real Nova", serif;
+        fill: var(--md-sys-color-on-primary-container);
+        stroke: none;
+    }
+
+    &:hover .logo {
+        stroke: var(--md-sys-color-on-tertiary-container);
+    }
+
+    &:hover text, &:hover textPath {
+        fill: var(--md-sys-color-on-tertiary-container);
+    }
+}
