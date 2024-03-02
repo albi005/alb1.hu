@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Cascadia Code";
+    src: url("/CascadiaCode.woff2") format("woff2");
+    font-display: swap;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface);
+    font-family: "Cascadia Code", "Courier New", Courier, monospace;
+    font-weight: 200;
+}

@@ -1,0 +1,30 @@
+﻿<div style="display: flex; align-items: center; gap: 16px">
+    <div style="height: 48px; width: 48px; display: flex; justify-content: center; align-items: center">
+        @ChildContent
+    </div>
+    <div>
+        <a style="color: var(--md-sys-color-primary); text-decoration: none" href="@Href">
+            @Title
+        </a>
+        <br/>
+        <span style="color: var(--md-sys-color-on-surface-variant)">by </span>
+        @if(CreatorLink == null)
+        {
+            <span style="color: var(--md-sys-color-primary)">@Creator</span>
+        }
+        else
+        {
+            <a style="color: var(--md-sys-color-primary); text-decoration: none" href="@CreatorLink">
+                @Creator
+            </a>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public required string Href { get; set; }
+    [Parameter] public required string Title { get; set; }
+    [Parameter] public required string Creator { get; set; }
+    [Parameter] public string? CreatorLink { get; set; }
+}
