@@ -1,18 +1,20 @@
+using Hello.Components;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddRazorPages();
+
+builder.Services.AddRazorComponents();
 
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();
-    app.UseHttpsRedirection();
 }
 
 app.UseStaticFiles();
+app.UseAntiforgery();
 
-app.UseRouting();
-
-app.MapRazorPages();
+app.MapRazorComponents<App>();
 
 app.Run();
