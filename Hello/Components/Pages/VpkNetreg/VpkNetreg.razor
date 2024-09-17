@@ -1,0 +1,137 @@
+@page "/vpknetreg"
+@using System.Net
+@using Blazored.LocalStorage
+@using HtmlAgilityPack
+@using Microsoft.AspNetCore.Components.Forms
+@rendermode RenderMode.InteractiveServer
+
+@inject ILocalStorageService LocalStorageService
+
+@{
+    _settings.SelectedAddressIndex = Math.Min(_settings.SelectedAddressIndex, _settings.Addresses.Count - 1);
+}
+
+<style>
+    button {
+        display: block;
+    }
+    .selected input {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+    }
+</style>
+
+<h1>VPK netreg</h1>
+<a style="color: var(--md-sys-color-primary); text-decoration: none; display: block"
+   href="https://github.com/albi005/alb1.hu/blob/main/Hello/Components/Pages/VpkNetreg/VpkNetreg.razor">
+    Source
+</a>
+
+<input @bind="@_settings.UserName"/>
+@_settings.UserName
+<input @bind="@_settings.Password" type="password"/>
+@_settings.Password
+
+@for (int i = 0; i < _settings.Addresses.Count; i++)
+{
+    int index = i;
+    bool selected = _settings.SelectedAddressIndex == index;
+    <div class="@(selected ? "selected" : "")">
+        <input @bind="@_settings.Addresses[index]"/>
+        @_settings.Addresses[index]
+        @if (!selected)
+        {
+            <button style="display: inline" @onclick="@(() => _settings.SelectedAddressIndex = index)">Select</button>
+        }
+        <button style="display: inline" @onclick="@(() => _settings.Addresses.RemoveAt(index))">Delete</button>
+    </div>
+}
+<button @onclick="@(() => _settings.Addresses.Add(""))">New address</button>
+<button @onclick="@(async () => await Save())">Save</button>
+@_message
+
+@code {
+    private const string StorageKey = "vpknetsettings";
+
+    private string? _message;
+    private NetregSettings _settings = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _settings = await LocalStorageService.GetItemAsync<NetregSettings>(StorageKey) ?? new();
+            StateHasChanged();
+        }
+    }
+
+    private async Task Save()
+    {
+        _message = "Saving";
+        await LocalStorageService.SetItemAsync(StorageKey, _settings);
+        if (_settings.UserName == null || _settings.Password == null || _settings.Addresses.Count == 0)
+        {
+            _message = "Invalid";
+            return;
+        }
+
+        CookieContainer cookieContainer = new();
+        HttpClientHandler httpClientHandler = new() { AllowAutoRedirect = true, CookieContainer = cookieContainer };
+        HttpClient httpClient = new(httpClientHandler)
+        {
+            BaseAddress = new("https://netreg.vpk.bme.hu/"),
+            DefaultRequestHeaders = { Host = "netreg.vpk.bme.hu", UserAgent = { new("(https://alb1.hu/vpknetreg)") } }
+        };
+        await httpClient.GetAsync("");
+        var resp = await httpClient.PostAsync("/index.php?id=login", new MultipartFormDataContent
+        {
+            { new StringContent(_settings.UserName), "amt[txtNeptun]" },
+            { new StringContent(_settings.Password), "amt[txtPsw]" }
+        });
+        HtmlDocument htmlDocument = new();
+        htmlDocument.Load(await resp.Content.ReadAsStreamAsync());
+        htmlDocument.GetElementbyId("amt[txtNeptun]").GetAttributeValue("value", "");
+        MultipartFormDataContent newData = new();
+        foreach (string key in new[] { "txtNeptun", "txtName", "txtEmail", "intYear", "intRoom", "txtHost", "txtPswOriginal", "psw1", "psw2" })
+        {
+            newData.Add(
+                new StringContent(
+                    htmlDocument.GetElementbyId($"amt[{key}]").GetAttributeValue("value", "")),
+                $"amt[{key}]"
+            );
+        }
+
+        foreach (string key in new[] { "clFaculty", "clBuilding" })
+        {
+            newData.Add(
+                new StringContent(
+                    htmlDocument.DocumentNode.SelectSingleNode($"//*[@name='amt[{key}]']").ChildNodes
+                        .First(n => n.Attributes.Any(a => a.Name == "selected"))
+                        .GetAttributeValue("value", "")
+                ),
+                $"amt[{key}]"
+            );
+        }
+
+        newData.Add(new StringContent(_settings.Addresses[_settings.SelectedAddressIndex]), "amt[txtMac]");
+        var resp2 = await httpClient.PostAsync("/index.php?id=data", newData);
+        var content2 = await resp2.Content.ReadAsStringAsync();
+        htmlDocument.LoadHtml(content2);
+        HtmlNode? errorNode = htmlDocument.GetElementbyId("error");
+        if (errorNode != null)
+            _message = errorNode.InnerHtml;
+        else if (content2.Contains("felismerte"))
+            _message = "Found";
+        else
+            _message = "Not found";
+    }
+
+    class NetregSettings
+    {
+        public string? UserName { get; set; }
+        public string? Password { get; set; }
+        public List<string> Addresses { get; set; } = [];
+        public int SelectedAddressIndex { get; set; }
+    }
+
+}
