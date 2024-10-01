@@ -2,7 +2,6 @@
 @using System.Net
 @using Blazored.LocalStorage
 @using HtmlAgilityPack
-@using Microsoft.AspNetCore.Components.Forms
 @rendermode RenderMode.InteractiveServer
 
 @inject ILocalStorageService LocalStorageService
@@ -12,8 +11,8 @@
 }
 
 <style>
-    button {
-        display: block;
+    input, button {
+        margin: 8px;
     }
     .selected input {
         background-color: var(--md-sys-color-primary-container);
@@ -21,46 +20,47 @@
     }
 </style>
 
-<h1>VPK netreg</h1>
-<a style="color: var(--md-sys-color-primary); text-decoration: none; display: block"
-   href="https://github.com/albi005/alb1.hu/blob/main/Hello/Components/Pages/VpkNetreg/VpkNetreg.razor">
-    Source
-</a>
-
-<input @bind="@_settings.UserName"/>
-@_settings.UserName
-<input @bind="@_settings.Password" type="password"/>
-@_settings.Password
+<h1 style="margin: 16px 8px">VPK netreg</h1>
+<input @bind="@_settings.UserName" placeholder="Neptun-kód"/>
+<input @bind="@_settings.Password" placeholder="Jelszó" type="password" style="margin-bottom: 24px"/>
 
 @for (int i = 0; i < _settings.Addresses.Count; i++)
 {
     int index = i;
     bool selected = _settings.SelectedAddressIndex == index;
-    <div class="@(selected ? "selected" : "")">
+    <div class="@(selected ? "selected" : null)">
         <input @bind="@_settings.Addresses[index]"/>
-        @_settings.Addresses[index]
-        @if (!selected)
-        {
-            <button style="display: inline" @onclick="@(() => _settings.SelectedAddressIndex = index)">Select</button>
-        }
-        <button style="display: inline" @onclick="@(() => _settings.Addresses.RemoveAt(index))">Delete</button>
+        <div style="display: inline">
+            <button @onclick="@(() => _settings.Addresses.RemoveAt(index))">Delete</button>
+            @if (!selected)
+            {
+                <button @onclick="@(() => _settings.SelectedAddressIndex = index)">Select</button>
+            }
+        </div>
     </div>
 }
-<button @onclick="@(() => _settings.Addresses.Add(""))">New address</button>
-<button @onclick="@(async () => await Save())">Save</button>
+<button @onclick="@(() => _settings.Addresses.Add(""))" style="display: block; margin-bottom: 24px">New address</button>
+<button disabled="@(_settings == _savedSettings)" @onclick="@(async () => await Save())">Save</button>
 @_message
+
+<a style="color: var(--md-sys-color-primary); text-decoration: none; display: block; margin: 16px 8px"
+   href="https://github.com/albi005/alb1.hu/blob/main/Hello/Components/Pages/VpkNetreg/VpkNetreg.razor">
+    Forráskód
+</a>
 
 @code {
     private const string StorageKey = "vpknetsettings";
 
     private string? _message;
     private NetregSettings _settings = new();
+    private NetregSettings _savedSettings = new();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             _settings = await LocalStorageService.GetItemAsync<NetregSettings>(StorageKey) ?? new();
+            _savedSettings = _settings with { Addresses = [.._settings.Addresses] };
             StateHasChanged();
         }
     }
@@ -69,6 +69,8 @@
     {
         _message = "Saving";
         await LocalStorageService.SetItemAsync(StorageKey, _settings);
+        _savedSettings = _settings.Copy();
+        StateHasChanged();
         if (_settings.UserName == null || _settings.Password == null || _settings.Addresses.Count == 0)
         {
             _message = "Invalid";
@@ -126,12 +128,22 @@
             _message = "Not found";
     }
 
-    class NetregSettings
+    record NetregSettings
     {
         public string? UserName { get; set; }
         public string? Password { get; set; }
         public List<string> Addresses { get; set; } = [];
         public int SelectedAddressIndex { get; set; }
+
+#pragma warning disable CS8851 // Record defines 'Equals' but not 'GetHashCode'.
+        public virtual bool Equals(NetregSettings? other) =>
+            other != null
+            && other.UserName == UserName
+            && other.Password == Password
+            && other.Addresses.SequenceEqual(Addresses)
+            && other.SelectedAddressIndex == SelectedAddressIndex;
+
+        public NetregSettings Copy() => this with { Addresses = [..Addresses] };
     }
 
 }
