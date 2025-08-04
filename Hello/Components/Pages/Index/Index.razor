@@ -2,7 +2,12 @@
 
 <HeadContent>
     <link href="css/index.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&text=Keleti%20K%C3%BAria%20Neszm%C3%A9ly" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&text=Keleti%20K%C3%BAria%20Neszm%C3%A9ly"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,32,100,700,0&text=StartSCH&display=swap"
+        rel="stylesheet">
 </HeadContent>
 
 <PageTitle>Albert Ragány-Németh</PageTitle>
@@ -11,7 +16,7 @@
     <div style="margin: 96px 0 64px 0; text-align: center">
         <h1><span style="font-weight: bold; display: block">Albert</span> Ragány-Németh</h1>
     </div>
-        
+
     <nav style="display: flex; gap: 64px; align-items: center; justify-content: center; margin-bottom: 64px">
         <a href="https://github.com/albi005">GitHub</a>
         <a href="mailto:hi@alb1.hu">Email</a>
@@ -24,27 +29,45 @@
     <p style="text-align: center; font-size: smaller">Some of the things I made or worked on</p>
 
     <div class="projects-grid">
-        <article id="dishelps">
-            <DisHelpsThumbnail/>
-            <h3>DisHelps</h3>
-            <Web Link="dishelps.org"/>
-            <PlayStore Text="Coming soon"/>
-            <AppStore Text="Coming soon"/>
+        <article id="startsch">
+            <div class="thumbnail" style="
+                    background-color: var(--md-sys-color-tertiary); color: var(--md-sys-color-on-tertiary);
+                    font-family: 'Roboto Serif', serif;
+                    font-size: 64px;
+                    font-weight: bolder;
+                ">
+                StartSCH
+            </div>
+            <h3>StartSCH</h3>
+            <Web Link="start.sch.bme.hu"/>
+            <GitHub Repo="kir-dev/StartSCH"/>
             <p>
-                Mobile app for children with learning disabilities.
-                Provides a place where they can share their experiences,
-                get to know more about their condition and find help.
+                News aggregator site for the Schönherz Dormitory
             </p>
             <h4>Built with</h4>
             <ul>
-                <li>.NET MAUI (previously Xamarin.Forms)</li>
-                <li>ASP.NET Core web APIs and Razor Pages</li>
-                <li>Piranha CMS</li>
+                <li>ASP.NET</li>
+                <li>Blazor</li>
                 <li>Entity Framework</li>
-                <li>Azure Active Directory B2C</li>
+                <li>Lit</li>
             </ul>
         </article>
-        
+
+        <article id="materialcolorutilities">
+            <Preview Height="352"
+                     Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive"/>
+            <h3 style="overflow-wrap: anywhere">MaterialColorUtilities</h3>
+            <GitHub Repo="albi005/MaterialColorUtilities"/>
+            <Web Link="albi005.github.io/MaterialColorUtilities"/>
+            <NuGet Package="MaterialColorUtilities"/>
+            <NuGet Package="MaterialColorUtilities.Maui"/>
+            <p>
+                C# implementation of Google's Material You color algorithms.
+                Includes multiple image quantizers and converter functions for a new color space.
+                Can be used to generate a color palette from colors in an image.
+            </p>
+        </article>
+
         <article id="keletikuria">
             <KeletiKuriaThumbnail/>
             <h3>Keleti Kúria</h3>
@@ -60,38 +83,6 @@
                 <li>ASP.NET Core Identity</li>
                 <li>Piranha CMS</li>
                 <li>Entity Framework</li>
-            </ul>
-        </article>
-        
-        <article id="materialcolorutilities">
-            <Preview Height="352" Src="https://albi005.github.io/MaterialColorUtilities/theme-builder?color=4285f4&style=expressive"/>
-            <h3 style="overflow-wrap: anywhere">MaterialColorUtilities</h3>
-            <GitHub Repo="albi005/MaterialColorUtilities"/>
-            <Web Link="albi005.github.io/MaterialColorUtilities"/>
-            <NuGet Package="MaterialColorUtilities"/>
-            <NuGet Package="MaterialColorUtilities.Maui"/>
-            <p>
-                C# implementation of Google's Material You color algorithms.
-                Includes multiple image quantizers and converter functions for a new color space.
-                Can be used to generate a color palette from colors in an image.
-            </p>
-        </article>
-
-        <article id="menza">
-            <Preview Src="https://menza.alb1.hu/?preview"/>
-            <h3>Menza</h3>
-            <Web Link="menza.alb1.hu"/>
-            <GitHub Repo="albi005/Menza"/>
-            <p>
-                A website where students can quickly check what is for lunch
-                and rate it.
-            </p>
-            <h4>Built with</h4>
-            <ul>
-                <li>Blazor WebAssembly</li>
-                <li>ASP.NET Core Web API</li>
-                <li>Entity Framework</li>
-                <li>Firebase Auth</li>
             </ul>
         </article>
 
@@ -113,8 +104,47 @@
                 <li>SignalR</li>
             </ul>
         </article>
+
+        <article id="menza">
+            <Preview Src="https://menza.alb1.hu/?preview"/>
+            <h3>Menza</h3>
+            <Web Link="menza.alb1.hu"/>
+            <GitHub Repo="albi005/Menza"/>
+            <p>
+                A website where students can quickly check what is for lunch
+                and rate it.
+            </p>
+            <h4>Built with</h4>
+            <ul>
+                <li>Blazor WebAssembly</li>
+                <li>ASP.NET Core Web API</li>
+                <li>Entity Framework</li>
+                <li>Firebase Auth</li>
+            </ul>
+        </article>
+
+        <article id="dishelps">
+            <DisHelpsThumbnail/>
+            <h3>DisHelps</h3>
+            <Web Link="dishelps.org"/>
+            <PlayStore Text="Unavailable"/>
+            <AppStore Text="Unavailable"/>
+            <p>
+                Mobile app for children with learning disabilities.
+                Provides a place where they can share their experiences,
+                get to know more about their condition and find help.
+            </p>
+            <h4>Built with</h4>
+            <ul>
+                <li>.NET MAUI (previously Xamarin.Forms)</li>
+                <li>ASP.NET Core web APIs and Razor Pages</li>
+                <li>Piranha CMS</li>
+                <li>Entity Framework</li>
+                <li>Azure Active Directory B2C</li>
+            </ul>
+        </article>
     </div>
-        
+
     <h2 id="other">Other</h2>
     <div class="link-list" style="text-align: center">
         <a href="https://github.com/albi005/alb1.hu">alb1.hu</a>
