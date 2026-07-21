@@ -1,0 +1,24 @@
+@switch (CurrentLanguage)
+{
+    case Language.English:
+        @ChildContent
+        break;
+    case Language.Hungarian:
+        if (Hungarian is { })
+        {
+            @Hungarian
+        }
+        else
+        {
+            @:TODO: Hungary
+        }
+        break;
+    default:
+        throw new InvalidOperationException();
+}
+
+@code {
+    [Parameter, EditorRequired] public required RenderFragment ChildContent { get; set; }
+    [Parameter] public RenderFragment? Hungarian { get; set; }
+    [CascadingParameter] public Language CurrentLanguage { get; set; }
+}
