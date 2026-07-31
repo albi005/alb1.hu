@@ -1,5 +1,12 @@
 using Blazored.LocalStorage;
 using Hello.Components;
+using Microsoft.AspNetCore.HttpLogging;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.Net.Http.Headers;
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +15,68 @@ builder.Services.AddRazorComponents()
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddHealthChecks();
 
+// OpenTelemetry: logs, metrics and traces.
+//     Automatically sends everything to the endpoint specified by the OTEL_EXPORTER_OTLP_ENDPOINT env var
+builder.Services
+    .AddOpenTelemetry()
+    .UseOtlpExporter()
+    .ConfigureResource(resource => resource.AddService("alb1"))
+    .WithLogging()
+    .WithTracing(tracing => tracing
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+    )
+    .WithMetrics(metrics => metrics
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+        .AddRuntimeInstrumentation()
+        .AddMeter("*")
+    );
+
+// Set the requester's IP address using headers set by the reverse proxy
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownProxies.Clear();
+    options.KnownIPNetworks.Clear();
+});
+
+// Log requester IP and User-Agent
+builder.Services.AddHttpLogging(options =>
+{
+    // nothing to see here
+    options.LoggingFields = HttpLoggingFields.RequestMethod
+                            | HttpLoggingFields.RequestPath
+                            | HttpLoggingFields.RequestQuery
+                            | HttpLoggingFields.ResponseStatusCode
+                            | HttpLoggingFields.Duration
+                            | HttpLoggingFields.RequestHeaders
+                            | HttpLoggingFields.ResponseHeaders;
+    options.RequestHeaders.Add("Upgrade-Insecure-Requests");
+    options.RequestHeaders.Add("Cdn-Loop");
+    options.RequestHeaders.Add("Cf-Connecting-Ip");
+    options.RequestHeaders.Add("Cf-Ipcountry");
+    options.RequestHeaders.Add("Cf-Ray");
+    options.RequestHeaders.Add("Cf-Visitor");
+    options.RequestHeaders.Add("Cf-Warp-Tag-Id");
+    options.RequestHeaders.Add("Priority");
+    options.RequestHeaders.Add("Sec-Fetch-Dest");
+    options.RequestHeaders.Add("Sec-Fetch-Mode");
+    options.RequestHeaders.Add("Sec-Fetch-Site");
+    options.RequestHeaders.Add("Sec-Fetch-User");
+    options.RequestHeaders.Add("Sec-Gpc");
+    options.RequestHeaders.Add("X-Original-Proto");
+    options.RequestHeaders.Add("X-Original-For");
+    options.RequestHeaders.Add("X-Forwarded-For");
+    options.RequestHeaders.Add("X-Forwarded-Proto");
+    options.RequestHeaders.Add(HeaderNames.Referer);
+});
+
+
 var app = builder.Build();
+
+app.UseHttpLogging();
+app.UseForwardedHeaders();
 
 if (!app.Environment.IsDevelopment())
 {

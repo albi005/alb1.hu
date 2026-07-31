@@ -1,4 +1,4 @@
-namespace Hello.Components.Pages.Cv;
+namespace Hello.Components.Pages.Resume;
 
 public enum Language
 {
