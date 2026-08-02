@@ -22,16 +22,78 @@
                            _ => Language.English,
                        })">
     <PageTitle>
-        <Translate>CV</Translate>
+        <Translate>
+            <English>
+                Albert Ragány-Németh | CV
+            </English>
+            <Hungarian>
+                Ragány-Németh Albert | Önéletrajz
+            </Hungarian>
+        </Translate>
     </PageTitle>
     <h1>
         <Translate>
-            Resume
+            <English>
+                Albert Ragány-Németh
+            </English>
+            <Hungarian>
+                Ragány-Németh Albert
+            </Hungarian>
         </Translate>
     </h1>
-    <p>
-        
-    </p>
+    @*
+## Experience
+- Simonyi Karoly szakkollegium, Kir-Dev webfejleszto kor
+    - StartSCH - 2024-től
+        - Önállóan tervezek és fejlesztek a kollégium lakóinak és az egyetem hallgatóinak egy weboldalt, ami összegyűjti
+        - Az utóbbi időben mások által létrehozott kontribúciókat is kezeltem (code review).
+        - ASP.NET Core, Entity Framework Core, OpenID Connect, 
+    - CMSch
+- MaterialColorUtilities
+    - Lefordítottam a Google Material You dizájnrendszerét segítő könyvtárát C#/.NET platformra, és közzétettem
+    - "found the easiest to work with" even by someone building with Python - https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits
+- DisHelps csapat
+    - DisHelps mobilalkalmazás
+        - Xamarin.Forms és MvvmCross, később .NET MAUI
+    - Szerver: ASP.NET Core Web APIs, Entity Framework Core
+
+## Studies
+- **Mérnökinformatikus BSc**, várhatóan a következő félévben végzek
+    - Budapesti Műszaki és Gazdaságtudományi Egyetem
+
+## Skills
+*@
+
+    <section class="experience">
+        <h2>
+            <Translate>
+                <English>Experience</English>
+                <Hungarian>Tapasztalat</Hungarian>
+            </Translate>
+        </h2>
+        <section class="kir-dev">
+            <h3>
+                <Translate>
+                    <English>
+                        <a href="https://simonyi.bme.hu/en">Simonyi Károly College for Advanced Studies</a>
+                    </English>
+                    <Hungarian>
+                        <a href="https://simonyi.bme.hu/hu">Simonyi Károly Szakkollégium</a>
+                    </Hungarian>
+                </Translate>,
+                <Translate>
+                    <English>
+                        <a href="https://kir-dev.hu/en">Kir-Dev web development group</a>
+                    </English>
+                    <Hungarian>
+                        <a href="https://kir-dev.hu/hu">Kir-Dev webfejlesztő kör</a>
+                    </Hungarian>
+                </Translate>
+            </h3>
+
+        </section>
+    </section>
+
 </CascadingValue>
 
 @code {

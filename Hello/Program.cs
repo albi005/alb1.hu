@@ -87,6 +87,23 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseAntiforgery();
 
+app.Use((context, next) =>
+{
+    context.Response.OnStarting(() =>
+    {
+        // When a Blazor page is rendered on the server, IAntiforgery.GetAndStoreTokens is called, which forces
+        // Cache-Control to be "no-cache, no-store", thereby disabling the bfcache. Override it.
+        // https://web.dev/articles/bfcache
+        // https://github.com/dotnet/aspnetcore/issues/54464
+        if (context.Response.Headers.TryGetValue(HeaderNames.CacheControl, out var cacheControlHeader)
+            && cacheControlHeader == "no-cache, no-store")
+            context.Response.Headers.CacheControl = "no-cache";
+        return Task.CompletedTask;
+    });
+
+    return next();
+});
+
 app.MapHealthChecks("/healthz");
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
