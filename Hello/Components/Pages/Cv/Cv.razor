@@ -24,13 +24,25 @@
         )
     </PageTitle>
     <div class="cv">
-        <header class="cv-header">
-            <h1>
-                @T(
-                    "Albert Ragány-Németh",
-                    "Ragány-Németh Albert"
-                )
+        <header class="cv-header" style="display: flex; justify-content: space-between; margin-bottom: 48px">
+            <h1 style="line-height: 1">
+                <div style="display: flex; flex-direction: column; justify-content: center; gap: 16px">
+                    <Translate>
+                        <English>
+                            <span>Albert</span>
+                            <span>Ragány-Németh</span>
+                        </English>
+                        <Hungarian>
+                            <span>Ragány-Németh</span>
+                            <span>Albert</span>
+                        </Hungarian>
+                    </Translate>
+                </div>
             </h1>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: end; gap: 16px">
+                <a href="mailto:albi@alb1.hu">albi@alb1.hu</a>
+                <a href="https://github.com/albi005">github.com/albi005</a>
+            </div>
         </header>
 
         <p class="intro">
@@ -38,7 +50,7 @@
                 <English>
                     Computer Engineering BSc student at the Budapest University of Technology and Economics,
                     experienced with .NET, also interested in Rust, looking for an 8 week internship,
-                    with additional opportunities later on.
+                    with opportunities later on.
                 </English>
                 <!-- TODO: Hungarian translation -->
             </Translate>
@@ -54,11 +66,15 @@
             <section class="item">
                 <p class="org">
                     <a href="https://simonyi.bme.hu/@T("en", "hu")">
-                        @T(
-                            "Simonyi Károly College for Advanced Studies",
-                            "Simonyi Károly Szakkollégium"
-                        )
+                        <Translate>
+                            <English>Simonyi Károly College for Advanced Studies</English>
+                            <Hungarian>Simonyi Károly Szakkollégium</Hungarian>
+                        </Translate>
                     </a>
+                    @if (_language is Language.English)
+                    {
+                        <br/>
+                    }
                     <span class="crumb">›</span>
                     <a href="https://kir-dev.hu/@T("en", "hu")">
                         @T(
@@ -68,10 +84,7 @@
                     </a>
                 </p>
                 <h3>
-                    <Translate>
-                        <English><a href="https://kir-dev.hu/en">StartSCH</a></English>
-                        <Hungarian><a href="https://kir-dev.hu/hu">StartSCH</a></Hungarian>
-                    </Translate>
+                    <a href="https://start.sch.bme.hu">StartSCH</a>
                 </h3>
                 <p class="from">
                     2024
@@ -115,11 +128,11 @@
                 <p class="note">
                     <Translate>
                         <English>
-                            As a testament to the quality of the documentation, it was
+                            Thanks to my documentation, it was
                             <a href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits">
                                 <q>found the easiest to work with</q>
                             </a>
-                            even by someone building on Linux with Python, before there was a Python version.
+                            even by someone building on Linux with Python.
                         </English>
                         <!-- TODO: Hungarian translation -->
                     </Translate>
@@ -154,10 +167,13 @@
                         <p>I took over the project after a while and:</p>
                         <ul class="list">
                             <li>migrated the repository, including the Git repository and the wiki from Azure DevOps
-                                to GitHub,</li>
+                                to GitHub,
+                            </li>
                             <li>set up automatic CI/CD using GitHub Actions deploying to the Google Play Store and the
-                                Apple App Store,</li>
-                            <li>simplified the project structure, and later migrated from Xamarin.Forms to .NET MAUI,</li>
+                                Apple App Store,
+                            </li>
+                            <li>simplified the project structure, and later migrated from Xamarin.Forms to .NET MAUI,
+                            </li>
                             <li>continued developing the app,</li>
                             <li>integrated Piranha CMS for managing the knowledge base section of the app.</li>
                         </ul>
@@ -190,21 +206,21 @@
                 </h3>
                 <p class="from">
                     <Translate>
-                        <English>2023 sept. – 2027 jan.</English>
-                        <Hungarian>2023 szept. – 2027 jan.</Hungarian>
+                        <English>2023 sept. – <i>2027 jan.</i></English>
+                        <Hungarian>2023 szept. – <i>2027 jan.</i></Hungarian>
                     </Translate>
                 </p>
-                <p class="sub">
+                <p>
                     <Translate>
-                        <English>Budapest University of Technology and Economics</English>
-                        <Hungarian>Budapesti Műszaki és Gazdaságtudományi Egyetem</Hungarian>
+                        <English>Budapest University of Technology and Economics,<br/>Software Engineering specialization</English>
+                        <Hungarian>Budapesti Műszaki és Gazdaságtudományi Egyetem,<br/>Szoftverfejlesztés specializáció</Hungarian>
                     </Translate>
                 </p>
             </section>
             <section class="item">
                 <h3>
                     <Translate>
-                        <English>Eötvös József Grammar School, Tata, mathematics track</English>
+                        <English>Eötvös József Gimnázium, Tata, mathematics track</English>
                         <!-- TODO: Hungarian translation -->
                     </Translate>
                 </h3>
@@ -213,7 +229,7 @@
                         <p class="sub">Matura exam:</p>
                         <ul class="scores">
                             <li>
-                                <span class="name">Advanced computer science</span>
+                                <span class="name">Informatics (advanced level)</span>
                                 <span class="leader"></span>
                                 <span class="score">97%</span>
                             </li>
@@ -256,9 +272,13 @@
                         </Translate>
                     </p>
                     <ul class="year-list">
-                        <li><strong><span class="year">2024</span> <a href="https://github.com/albi005/advent-of-code-2024">50/50* · Rust</a></strong></li>
-                        <li><span class="year">2023</span> <a href="https://github.com/albi005/advent-of-code-rust">15/50* · Rust</a></li>
-                        <li><span class="year">2022</span> <a href="https://github.com/albi005/AdventOfCode2022">26/50* · C#</a></li>
+                        <li><strong><span class="year">2024</span> <a
+                                    href="https://github.com/albi005/advent-of-code-2024">50/50* · Solutions in Rust</a></strong>
+                        </li>
+                        <li><span class="year">2023</span> <a href="https://github.com/albi005/advent-of-code-rust">15/50*
+                                · Solutions in Rust</a></li>
+                        <li><span class="year">2022</span> <a href="https://github.com/albi005/AdventOfCode2022">26/50*
+                                · Solutions in C#</a></li>
                     </ul>
                 </li>
                 <li class="item">
@@ -273,12 +293,18 @@
                     <Translate>
                         <English>
                             <ul class="chips">
-                                <li><a href="https://github.com/albi005/NemesOnline">Solutions · C++</a></li>
+                                <li><a href="https://github.com/albi005/NemesOnline">Solutions in C++ on GitHub</a></li>
                             </ul>
                             <ul class="year-list">
-                                <li><strong><span class="year">2022/2023</span> <a href="http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf">11th place</a></strong></li>
-                                <li><span class="year">2021/2022</span> <a href="https://tehetseg.inf.elte.hu/nemes-online/2022/eredmeny3.pdf">19th place</a></li>
-                                <li><span class="year">2020/2021</span> <a href="https://tehetseg.inf.elte.hu/nemes-online/2021/eredmeny2.pdf">55th place</a></li>
+                                <li><strong><span class="year">2022/2023</span> <a
+                                            href="http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf">11th
+                                            place</a></strong></li>
+                                <li><span class="year">2021/2022</span> <a
+                                        href="https://tehetseg.inf.elte.hu/nemes-online/2022/eredmeny3.pdf">19th
+                                        place</a></li>
+                                <li><span class="year">2020/2021</span> <a
+                                        href="https://tehetseg.inf.elte.hu/nemes-online/2021/eredmeny2.pdf">55th
+                                        place</a></li>
                             </ul>
                         </English>
                         <!-- TODO: Hungarian translation -->
@@ -288,10 +314,11 @@
                     <h3>
                         <a href="https://wro-association.org/">World Robot Olympiad</a>
                     </h3>
-                    <ul class="chips">
-                        <li>2017</li>
-                        <li>2018</li>
-                        <li><a href="https://photos.app.goo.gl/XFj2AEYG5a4FQ9k68">2019</a></li>
+                    <ul class="year-list year-list--row">
+                        <li><span class="year">2017</span></li>
+                        <li><span class="year">2018</span></li>
+                        <li><span class="year"><a href="https://photos.app.goo.gl/XFj2AEYG5a4FQ9k68">2019</a></span>
+                        </li>
                     </ul>
                     <p>
                         <Translate>
