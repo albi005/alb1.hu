@@ -16,226 +16,255 @@
     </script>
 </HeadContent>
 
-<CascadingValue Value="@(HttpContext.Request.Path.Value switch
-                       {
-                           "/oneletrajz" => Language.Hungarian,
-                           _ => Language.English,
-                       })">
+<CascadingValue Value="@_language">
     <PageTitle>
-        <Translate>
-            <English>
-                Albert Ragány-Németh | CV
-            </English>
-            <Hungarian>
-                Ragány-Németh Albert | Önéletrajz
-            </Hungarian>
-        </Translate>
+        @T(
+            "Albert Ragány-Németh | CV",
+            "Ragány-Németh Albert | Önéletrajz"
+        )
     </PageTitle>
-    <h1>
-        <Translate>
-            <English>
-                Albert Ragány-Németh
-            </English>
-            <Hungarian>
-                Ragány-Németh Albert
-            </Hungarian>
-        </Translate>
-    </h1>
-    @*
-## Experience
-- Simonyi Karoly szakkollegium, Kir-Dev webfejleszto kor
-    - StartSCH - 2024-től
-        - Önállóan tervezek és fejlesztek a kollégium lakóinak és az egyetem hallgatóinak egy weboldalt, ami összegyűjti
-        - Az utóbbi időben mások által létrehozott kontribúciókat is kezeltem (code review).
-        - ASP.NET Core, Entity Framework Core, OpenID Connect, 
-    - CMSch
-- MaterialColorUtilities
-    - Lefordítottam a Google Material You dizájnrendszerét segítő könyvtárát C#/.NET platformra, és közzétettem
-    - "found the easiest to work with" even by someone building with Python - https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits
-- DisHelps csapat
-    - DisHelps mobilalkalmazás
-        - Xamarin.Forms és MvvmCross, később .NET MAUI
-    - Szerver: ASP.NET Core Web APIs, Entity Framework Core
-
-## Studies
-- **Mérnökinformatikus BSc**, várhatóan a következő félévben végzek
-    - Budapesti Műszaki és Gazdaságtudományi Egyetem
-
-## Skills
-*@
-
-    <section class="experience">
-        <h2>
+    <div class="cv">
+        <header class="cv-header">
+            <h1>
+                @T(
+                    "Albert Ragány-Németh",
+                    "Ragány-Németh Albert"
+                )
+            </h1>
+        </header>
+        
+        <p>
             <Translate>
-                <English>Experience</English>
-                <Hungarian>Tapasztalat</Hungarian>
+                <English>
+                    Computer Engineering BSc student at the Budapest University of Technology and Economics,
+                    experienced with .NET, also interested in Rust, looking for an 8 week internship,
+                    with additional opportunities later on.
+                </English>
             </Translate>
-        </h2>
-        <section class="kir-dev">
-            <h3>
-                <Translate>
-                    <English>
-                        <a href="https://simonyi.bme.hu/en">Simonyi Károly College for Advanced Studies</a>
-                    </English>
-                    <Hungarian>
-                        <a href="https://simonyi.bme.hu/hu">Simonyi Károly Szakkollégium</a>
-                    </Hungarian>
-                </Translate>,
-                <Translate>
-                    <English>
-                        <a href="https://kir-dev.hu/en">Kir-Dev web development group</a>
-                    </English>
-                    <Hungarian>
-                        <a href="https://kir-dev.hu/hu">Kir-Dev webfejlesztő kör</a>
-                    </Hungarian>
-                </Translate>
-            </h3>
+        </p>
 
-            <ul>
-                <li class="item">
-                    <div class="title">
-                        <Translate>
-                            <English><a href="https://kir-dev.hu/en">StartSCH</a></English>
-                            <Hungarian><a href="https://kir-dev.hu/hu">StartSCH</a></Hungarian>
-                        </Translate>
-                        <span class="from">2024–</span>
-                    </div>
-                    <div class="tech">ASP.NET Core · Entity Framework Core · OpenID Connect</div>
-                    <p>
-                        <Translate>
-                            <English>
-                                I independently design and develop a website for the college's residents and the
-                                university's students.
-                            </English>
-                            <Hungarian>
-                                Önállóan tervezek és fejlesztek egy weboldalt a kollégium lakóinak és az egyetem
-                                hallgatóinak.
-                            </Hungarian>
-                        </Translate>
-                    </p>
-                    <p>
-                        <Translate>
-                            <English>
-                                Lately I have also been reviewing and merging contributions written by others (code review).
-                            </English>
-                            <Hungarian>
-                                Az utóbbi időben mások által létrehozott kontribúciókat is kezelem (code review).
-                            </Hungarian>
-                        </Translate>
-                    </p>
-                </li>
-                <li class="item">
-                    <div class="title">
-                        <Translate>
-                            <English>CMSch</English>
-                            <Hungarian>CMSch</Hungarian>
-                        </Translate>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <section class="item">
-            <h3>
-                <Translate>
-                    <English><a href="https://github.com/albirekname/material-color-utilities">MaterialColorUtilities</a></English>
-                    <Hungarian><a href="https://github.com/albirekname/material-color-utilities">MaterialColorUtilities</a></Hungarian>
-                </Translate>
-            </h3>
-            <p>
-                <Translate>
-                    <English>
-                        I ported Google's Material You design system helper library to C#/.NET and published it on NuGet.
-                    </English>
-                    <Hungarian>
-                        Lefordítottam a Google Material You dizájnszisztémát segítő könyvtárát C#/.NET platformra, és
-                        közzétettem NuGet-en.
-                    </Hungarian>
-                </Translate>
-            </p>
-            <p class="note">
-                <Translate>
-                    <English>
-                        <q>found the easiest to work with</q> — <a href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits">even by someone building with Python</a>.
-                    </English>
-                    <Hungarian>
-                        <q>found the easiest to work with</q> — <a href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f0de8c8ee3f395c383400dc0f40e9e4e0#thanks--credits">Pythonban fejlesztett fejlesztő szerint is</a>.
-                    </Hungarian>
-                </Translate>
-            </p>
-        </section>
-        <section class="item">
-            <h3>
-                <Translate>
-                    <English>DisHelps team</English>
-                    <Hungarian>DisHelps csapat</Hungarian>
-                </Translate>
-            </h3>
-            <div class="title">
-                <Translate>
-                    <English>DisHelps mobile app and server</English>
-                    <Hungarian>DisHelps mobilalkalmazás és szerver</Hungarian>
-                </Translate>
-            </div>
-            <div class="project">
-                <Translate>
-                    <English>Xamarin.Forms & MvvmCross, later .NET MAUI · ASP.NET Core Web APIs · Entity Framework Core</English>
-                    <Hungarian>Xamarin.Forms & MvvmCross, később .NET MAUI · ASP.NET Core Web APIs · Entity Framework Core</Hungarian>
-                </Translate>
-            </div>
-            <p>
-                <Translate>
-                    <English>
-                        As part of the DisHelps team I built the mobile app and the backend that powers it.
-                    </English>
-                    <Hungarian>
-                        A DisHelps csapat tagjaként fejlesztettem a mobilalkalmazást és a mögötte álló szervert.
-                    </Hungarian>
-                </Translate>
-            </p>
-        </section>
-    </section>
+        <section class="experience">
+            <h2>
+                @T(
+                    "Experience",
+                    "Tapasztalat"
+                )
+            </h2>
+            <section class="kir-dev">
+                <h3>
+                    <a href="https://simonyi.bme.hu/@T("en", "hu")">
+                        @T(
+                            "Simonyi Károly College for Advanced Studies",
+                            "Simonyi Károly Szakkollégium"
+                        )
+                    </a>,<br/>
+                    <a href="https://kir-dev.hu/@T("en", "hu")">
+                        @T(
+                            "Kir-Dev web development group",
+                            "Kir-Dev webfejlesztő kör"
+                        )
+                    </a>
+                </h3>
 
-    <section class="studies">
-        <h2>
-            <Translate>
-                <English>Studies</English>
-                <Hungarian>Tanulmányok</Hungarian>
-            </Translate>
-        </h2>
-        <section class="item">
-            <div class="title">
-                <Translate>
-                    <English><strong>Computer Science BSc</strong>, expected to graduate in the coming semester</English>
-                    <Hungarian><strong>Mérnökinformatikus BSc</strong>, várhatóan a következő félévben végzek</Hungarian>
-                </Translate>
-            </div>
-            <div class="project">
-                <Translate>
-                    <English>Budapest University of Technology and Economics</English>
-                    <Hungarian>Budapesti Műszaki és Gazdaságtudományi Egyetem</Hungarian>
-                </Translate>
-            </div>
-        </section>
-    </section>
+                <ul>
+                    <li class="item">
+                        <div class="title">
+                            <Translate>
+                                <English><a href="https://kir-dev.hu/en">StartSCH</a></English>
+                                <Hungarian><a href="https://kir-dev.hu/hu">StartSCH</a></Hungarian>
+                            </Translate>
+                            <span class="from">2024 
+                            <Translate>
+                                <English>oct. – present</English>
+                                <Hungarian>okt. – jelen</Hungarian>
+                            </Translate>
+                        </span>
+                        </div>
+                        <div class="tech">ASP.NET Core · Entity Framework Core · OpenID Connect</div>
+                        <p>
+                            <Translate>
+                                <English>
+                                    I created and lead the development of a website
+                                </English>
+                                <Hungarian>
+                                    Önállóan tervezek és fejlesztek egy weboldalt a kollégium lakóinak és az egyetem
+                                    hallgatóinak.
+                                </Hungarian>
+                            </Translate>
+                        </p>
+                        <p>
+                            <Translate>
+                                <English>
+                                    Lately I have also been reviewing and merging contributions written by others (code
+                                    review).
+                                </English>
+                                <Hungarian>
+                                    Az utóbbi időben mások által létrehozott kontribúciókat is kezelem (code review).
+                                </Hungarian>
+                            </Translate>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="item">
+                <h3>
+                    <Translate>
+                        <English><a href="https://github.com/albirekname/material-color-utilities">MaterialColorUtilities</a>
+                        </English>
+                        <Hungarian><a href="https://github.com/albirekname/material-color-utilities">MaterialColorUtilities</a>
+                        </Hungarian>
+                    </Translate>
+                </h3>
+                <p>
+                    <Translate>
+                        <English>
+                            I ported Google's Material You design system helper library to C#/.NET and published it on
+                            NuGet.
+                        </English>
+                        <Hungarian>
+                            Lefordítottam a Google Material You dizájnszisztémát segítő könyvtárát C#/.NET platformra,
+                            és
+                            közzétettem NuGet-en.
+                        </Hungarian>
+                    </Translate>
+                </p>
+                <p class="note">
+                    <Translate>
+                        <English>
+                            <q>found the easiest to work with</q> — <a
+                                href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits">even
+                                by someone building with Python</a>.
+                        </English>
+                        <Hungarian>
+                            <q>found the easiest to work with</q> — <a
+                                href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f0de8c8ee3f395c383400dc0f40e9e4e0#thanks--credits">Pythonban
+                                fejlesztett fejlesztő szerint is</a>.
+                        </Hungarian>
+                    </Translate>
+                </p>
+            </section>
+            <section class="item">
+                <h3>
+                    <Translate>
+                        <English>DisHelps team</English>
+                        <Hungarian>DisHelps csapat</Hungarian>
+                    </Translate>
+                </h3>
+                <div class="title">
+                    <Translate>
+                        <English>DisHelps mobile app and server</English>
+                        <Hungarian>DisHelps mobilalkalmazás és szerver</Hungarian>
+                    </Translate>
+                </div>
+                <div class="project">
+                    <Translate>
+                        <English>Xamarin.Forms & MvvmCross, later .NET MAUI · ASP.NET Core Web APIs · Entity Framework
+                            Core
+                        </English>
+                        <Hungarian>Xamarin.Forms & MvvmCross, később .NET MAUI · ASP.NET Core Web APIs · Entity
+                            Framework Core
+                        </Hungarian>
+                    </Translate>
+                </div>
+                <p>
+                    <Translate>
+                        <English>
+                            I started learning programming after joining the DisHelps team.
+                            Before that I only had minor experience with coding:
+                            - I lead a World Robot Olympiad team,
+                            - 
+                            
 
-    <section class="skills">
-        <h2>
-            <Translate>
-                <English>Skills</English>
-                <Hungarian>Tudások</Hungarian>
-            </Translate>
-        </h2>
-        <ul>
-            <li>C# / .NET</li>
-            <li>ASP.NET Core</li>
-            <li>Entity Framework Core</li>
-            <li>Xamarin.Forms / .NET MAUI</li>
-            <li>OpenID Connect</li>
-        </ul>
-    </section>
+                            I took over the project once the other team members' motivation dried up and:
+                            - migrated the repository, including the Git repository and the wiki from Azure DevOps to
+                            GitHub,
+                            - set up automatic CI/CD using GitHub Actions deploying to the Google Play Store and the
+                            Apple App Store,
+                            - simplified the project structure, and later migrated from Xamarin.Forms to .NET MAUI,
+                            - continued developing the app,
+                            - integrated Piranha CMS for managing the knowledge base section of the app.
+
+                            Managing a larger project let me experiment freely:
+                            I refactored major parts of the code base multiple times,
+                            simplifying the code base even more each time.
+                        </English>
+                        <Hungarian>
+                            A DisHelps csapat tagjaként fejlesztettem a mobilalkalmazást és a mögötte álló szervert.
+                        </Hungarian>
+                    </Translate>
+                </p>
+            </section>
+        </section>
+
+        <section class="studies">
+            <h2>
+                <Translate>
+                    <English>Studies</English>
+                    <Hungarian>Tanulmányok</Hungarian>
+                </Translate>
+            </h2>
+            <section class="item">
+                <div class="title">
+                    <Translate>
+                        <English><strong>Computer Engineering BSc</strong>, 2023 sept. - <i>2027 jan.</i></English>
+                        <Hungarian><strong>Mérnökinformatikus BSc</strong>, 2023 szept. - <i>2027 jan.</i></Hungarian>
+                    </Translate>
+                </div>
+                <div class="project">
+                    <Translate>
+                        <English>Budapest University of Technology and Economics</English>
+                        <Hungarian>Budapesti Műszaki és Gazdaságtudományi Egyetem</Hungarian>
+                    </Translate>
+                </div>
+            </section>
+            - Eötvös József Gimnázium, Tata, matematika tagozat
+              - Érettségi:
+                - Emelt informatika: 97%
+                - Matematika: 98%
+                - Angol: 98%
+        </section>
+
+        <section class="competitions">
+            <h2>
+                @T("Competitions", "Versenyek")
+            </h2>
+            - Advent of Code
+                - 50/50 stars, Rust
+                - https://github.com/albi005/advent-of-code-2024
+                - Daily code puzzles for 25 days, getting harder over time
+                - [2024] 50* / 50* - https://github.com/albi005/advent-of-code-2024 - Rust
+                  [2023] 15* / 50* - https://github.com/albi005/advent-of-code-rust - Rust
+                  [2022] 26* / 50* - https://github.com/albi005/AdventOfCode2022 - C#
+            - Nemes Tihamér Online Programozási Verseny
+                - https://github.com/albi005/NemesOnline
+                - 2022/2023 - [11. hely](http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf)
+            - World Robot Olympiad
+        </section>
+    </div>
 
 </CascadingValue>
 
 @code {
+    private Language _language;
     [CascadingParameter] public required HttpContext HttpContext { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _language = HttpContext.Request.Path.Value switch
+        {
+            "/oneletrajz" => Language.Hungarian,
+            _ => Language.English,
+        };
+    }
+
+    private string T(string english, string? hungarian = null)
+    {
+        return _language switch
+        {
+            Language.English => english,
+            Language.Hungarian => hungarian ?? "TODO: HU",
+            _ => english,
+        };
+    }
+
 }
