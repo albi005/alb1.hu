@@ -74,7 +74,7 @@ section:last-child {
 }
 
 .org a {
-    color: inherit;
+    color: var(--md-sys-color-primary);
 }
 
 .org .crumb {
