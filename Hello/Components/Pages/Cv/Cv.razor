@@ -52,32 +52,33 @@
                 )
             </h2>
             <section class="item">
-                <h3>
+                <p class="org">
                     <a href="https://simonyi.bme.hu/@T("en", "hu")">
                         @T(
                             "Simonyi Károly College for Advanced Studies",
                             "Simonyi Károly Szakkollégium"
                         )
-                    </a>,<br/>
+                    </a>
+                    <span class="crumb">›</span>
                     <a href="https://kir-dev.hu/@T("en", "hu")">
                         @T(
                             "Kir-Dev web development group",
                             "Kir-Dev webfejlesztő kör"
                         )
                     </a>
-                </h3>
-                <p class="sub">
+                </p>
+                <h3>
                     <Translate>
                         <English><a href="https://kir-dev.hu/en">StartSCH</a></English>
                         <Hungarian><a href="https://kir-dev.hu/hu">StartSCH</a></Hungarian>
                     </Translate>
-                    <span class="from">
-                        2024
-                        <Translate>
-                            <English>oct. – present</English>
-                            <Hungarian>okt. – jelen</Hungarian>
-                        </Translate>
-                    </span>
+                </h3>
+                <p class="from">
+                    2024
+                    <Translate>
+                        <English>oct. – present</English>
+                        <Hungarian>okt. – jelen</Hungarian>
+                    </Translate>
                 </p>
                 <p class="tech">ASP.NET Core · Entity Framework Core · OpenID Connect</p>
                 <Translate>
@@ -183,10 +184,16 @@
             <section class="item">
                 <h3>
                     <Translate>
-                        <English><strong>Computer Engineering BSc</strong>, 2023 sept. - <i>2027 jan.</i></English>
-                        <Hungarian><strong>Mérnökinformatikus BSc</strong>, 2023 szept. - <i>2027 jan.</i></Hungarian>
+                        <English><strong>Computer Engineering BSc</strong></English>
+                        <Hungarian><strong>Mérnökinformatikus BSc</strong></Hungarian>
                     </Translate>
                 </h3>
+                <p class="from">
+                    <Translate>
+                        <English>2023 sept. – 2027 jan.</English>
+                        <Hungarian>2023 szept. – 2027 jan.</Hungarian>
+                    </Translate>
+                </p>
                 <p class="sub">
                     <Translate>
                         <English>Budapest University of Technology and Economics</English>
@@ -203,13 +210,22 @@
                 </h3>
                 <Translate>
                     <English>
-                        <ul class="list">
-                            <li>Matura exam:
-                                <ul>
-                                    <li>Advanced computer science: 97%</li>
-                                    <li>Mathematics: 98%</li>
-                                    <li>English: 98%</li>
-                                </ul>
+                        <p class="sub">Matura exam:</p>
+                        <ul class="scores">
+                            <li>
+                                <span class="name">Advanced computer science</span>
+                                <span class="leader"></span>
+                                <span class="score">97%</span>
+                            </li>
+                            <li>
+                                <span class="name">Mathematics</span>
+                                <span class="leader"></span>
+                                <span class="score">98%</span>
+                            </li>
+                            <li>
+                                <span class="name">English</span>
+                                <span class="leader"></span>
+                                <span class="score">98%</span>
                             </li>
                         </ul>
                     </English>
@@ -236,9 +252,9 @@
                         </Translate>
                     </p>
                     <ul class="year-list">
-                        <li><span class="year">[2024]</span> 50* / 50* · <a href="https://github.com/albi005/advent-of-code-2024">advent-of-code-2024</a> · Rust</li>
-                        <li><span class="year">[2023]</span> 15* / 50* · <a href="https://github.com/albi005/advent-of-code-rust">advent-of-code-rust</a> · Rust</li>
-                        <li><span class="year">[2022]</span> 26* / 50* · <a href="https://github.com/albi005/AdventOfCode2022">AdventOfCode2022</a> · C#</li>
+                        <li><strong><span class="year">2024</span> <a href="https://github.com/albi005/advent-of-code-2024">50/50* · Rust</a></strong></li>
+                        <li><span class="year">2023</span> <a href="https://github.com/albi005/advent-of-code-rust">15/50* · Rust</a></li>
+                        <li><span class="year">2022</span> <a href="https://github.com/albi005/AdventOfCode2022">26/50* · C#</a></li>
                     </ul>
                 </li>
                 <li class="item">
@@ -252,11 +268,13 @@
                     </h3>
                     <Translate>
                         <English>
-                            <ul class="list">
-                                <li>Solutions: <a href="https://github.com/albi005/NemesOnline">github.com/albi005/NemesOnline</a></li>
-                                <li>2022/2023 – <a href="http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf">11th place</a></li>
-                                <li>2021/2022 – <a href="https://tehetseg.inf.elte.hu/nemes-online/2022/eredmeny3.pdf">19th place</a></li>
-                                <li>2020/2021 – <a href="https://tehetseg.inf.elte.hu/nemes-online/2021/eredmeny2.pdf">55th place</a></li>
+                            <ul class="chips">
+                                <li><a href="https://github.com/albi005/NemesOnline">Solutions · C++</a></li>
+                            </ul>
+                            <ul class="year-list">
+                                <li><strong><span class="year">2022/2023</span> <a href="http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf">11th place</a></strong></li>
+                                <li><span class="year">2021/2022</span> <a href="https://tehetseg.inf.elte.hu/nemes-online/2022/eredmeny3.pdf">19th place</a></li>
+                                <li><span class="year">2020/2021</span> <a href="https://tehetseg.inf.elte.hu/nemes-online/2021/eredmeny2.pdf">55th place</a></li>
                             </ul>
                         </English>
                         <!-- TODO: Hungarian translation -->
@@ -264,12 +282,13 @@
                 </li>
                 <li class="item">
                     <h3>
-                        <a href="https://wro-association.org/">World Robot Olympiad</a>,
-                        <Translate>
-                            <English>2017, 2018, <a href="https://photos.app.goo.gl/XFj2AEYG5a4FQ9k68">2019</a></English>
-                            <!-- TODO: Hungarian translation -->
-                        </Translate>
+                        <a href="https://wro-association.org/">World Robot Olympiad</a>
                     </h3>
+                    <ul class="chips">
+                        <li>2017</li>
+                        <li>2018</li>
+                        <li><a href="https://photos.app.goo.gl/XFj2AEYG5a4FQ9k68">2019</a></li>
+                    </ul>
                     <p>
                         <Translate>
                             <English>
