@@ -33,13 +33,14 @@
             </h1>
         </header>
 
-        <p>
+        <p class="intro">
             <Translate>
                 <English>
                     Computer Engineering BSc student at the Budapest University of Technology and Economics,
                     experienced with .NET, also interested in Rust, looking for an 8 week internship,
                     with additional opportunities later on.
                 </English>
+                <!-- TODO: Hungarian translation -->
             </Translate>
         </p>
 
@@ -88,8 +89,7 @@
                                     the websites of the university and redistributes them to the students.
                                 </p>
                             </English>
-                            <Hungarian>
-                            </Hungarian>
+                            <!-- TODO: Hungarian translation -->
                         </Translate>
                     </li>
                 </ul>
@@ -100,18 +100,17 @@
                         MaterialColorUtilities
                     </a>
                 </h3>
-                <pre>
-                    - 78 stars on GitHub
-                    - 99.5K total downloads on NuGet
-                </pre>
+                <ul class="stats">
+                    <li>78 stars on GitHub</li>
+                    <li>99.5K total downloads on NuGet</li>
+                </ul>
                 <p>
                     <Translate>
                         <English>
                             I ported Google's Material You design system helper library to C#/.NET and published it on
                             NuGet.
                         </English>
-                        <Hungarian>
-                        </Hungarian>
+                        <!-- TODO: Hungarian translation -->
                     </Translate>
                 </p>
                 <p class="note">
@@ -123,8 +122,7 @@
                             </a>
                             even by someone building on Linux with Python, before there was a Python version.
                         </English>
-                        <Hungarian>
-                        </Hungarian>
+                        <!-- TODO: Hungarian translation -->
                     </Translate>
                 </p>
             </section>
@@ -151,29 +149,29 @@
                         </Hungarian>
                     </Translate>
                 </div>
-                <p>
-                    <Translate>
-                        <English>
-                            I started learning programming after joining the DisHelps team.
-
-                            I took over the project after a while and:
-                            - migrated the repository, including the Git repository and the wiki from Azure DevOps to
-                            GitHub,
-                            - set up automatic CI/CD using GitHub Actions deploying to the Google Play Store and the
-                            Apple App Store,
-                            - simplified the project structure, and later migrated from Xamarin.Forms to .NET MAUI,
-                            - continued developing the app,
-                            - integrated Piranha CMS for managing the knowledge base section of the app.
-
-                            Managing a larger project let me experiment freely:
-                            I refactored major parts of the code base multiple times,
-                            simplifying the code base even more each time.
-                        </English>
-                        <Hungarian>
-                            A DisHelps csapat tagjaként fejlesztettem a mobilalkalmazást és a mögötte álló szervert.
-                        </Hungarian>
-                    </Translate>
-                </p>
+                <Translate>
+                    <English>
+                        <p>I started learning programming after joining the DisHelps team.</p>
+                        <p>I took over the project after a while and:</p>
+                        <ul class="list">
+                            <li>migrated the repository, including the Git repository and the wiki from Azure DevOps
+                                to GitHub,</li>
+                            <li>set up automatic CI/CD using GitHub Actions deploying to the Google Play Store and the
+                                Apple App Store,</li>
+                            <li>simplified the project structure, and later migrated from Xamarin.Forms to .NET MAUI,</li>
+                            <li>continued developing the app,</li>
+                            <li>integrated Piranha CMS for managing the knowledge base section of the app.</li>
+                        </ul>
+                        <p>
+                            Managing a larger project let me experiment freely: I refactored major parts of the code
+                            base multiple times, simplifying the code base even more each time.
+                        </p>
+                    </English>
+                    <Hungarian>
+                        A DisHelps csapat tagjaként fejlesztettem a mobilalkalmazást és a mögötte álló szervert.
+                    </Hungarian>
+                    <!-- TODO: complete Hungarian translation -->
+                </Translate>
             </section>
         </section>
 
@@ -198,35 +196,95 @@
                     </Translate>
                 </div>
             </section>
-            <pre>
-            - Eötvös József Gimnázium, Tata, matematika tagozat
-              - Érettségi:
-                - Emelt informatika: 97%
-                - Matematika: 98%
-                - Angol: 98%
-            </pre>
+            <section class="item">
+                <div class="title">
+                    <Translate>
+                        <English>Eötvös József Grammar School, Tata, mathematics track</English>
+                        <!-- TODO: Hungarian translation -->
+                    </Translate>
+                </div>
+                <Translate>
+                    <English>
+                        <ul class="list">
+                            <li>Matriculation exam:
+                                <ul>
+                                    <li>Advanced computer science: 97%</li>
+                                    <li>Mathematics: 98%</li>
+                                    <li>English: 98%</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </English>
+                    <!-- TODO: Hungarian translation -->
+                </Translate>
+            </section>
         </section>
 
         <section class="competitions">
             <h2>
                 @T("Competitions", "Versenyek")
             </h2>
-            <pre>
-            - Advent of Code
-                - Daily code puzzles for 25 days, getting harder over time
-                - 50/50 stars, Rust
-                - [2024] 50* / 50* - https://github.com/albi005/advent-of-code-2024 - Rust
-                  [2023] 15* / 50* - https://github.com/albi005/advent-of-code-rust - Rust
-                  [2022] 26* / 50* - https://github.com/albi005/AdventOfCode2022 - C#
-            - [Nemes Tihamér Online Programozási Verseny](https://tehetseg.inf.elte.hu/nemes-online/index.html)
-                - Solutions: https://github.com/albi005/NemesOnline
-                - 2022/2023 - [11. hely](http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf)
-                - 2021/2022 - [19. hely](https://tehetseg.inf.elte.hu/nemes-online/2022/eredmeny3.pdf)
-                - 2020/2021 - [55. hely](https://tehetseg.inf.elte.hu/nemes-online/2021/eredmeny2.pdf)
-            - [World Robot Olympiad](https://wro-association.org/), 2017, 2018, [2019](https://photos.app.goo.gl/XFj2AEYG5a4FQ9k68)
-                - Designed and programmed LEGO robots that completed autonomous tasks,
-                  reaching better placements at the competition each year.
-            </pre>
+            <ul class="competition-list">
+                <li class="item">
+                    <h3>Advent of Code</h3>
+                    <p>
+                        <Translate>
+                            <English>Daily code puzzles for 25 days, getting harder over time</English>
+                            <!-- TODO: Hungarian translation -->
+                        </Translate>
+                    </p>
+                    <p>
+                        <Translate>
+                            <English>50/50 stars, Rust</English>
+                            <!-- TODO: Hungarian translation -->
+                        </Translate>
+                    </p>
+                    <ul class="year-list">
+                        <li><span class="year">[2024]</span> 50* / 50* · <a href="https://github.com/albi005/advent-of-code-2024">advent-of-code-2024</a> · Rust</li>
+                        <li><span class="year">[2023]</span> 15* / 50* · <a href="https://github.com/albi005/advent-of-code-rust">advent-of-code-rust</a> · Rust</li>
+                        <li><span class="year">[2022]</span> 26* / 50* · <a href="https://github.com/albi005/AdventOfCode2022">AdventOfCode2022</a> · C#</li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <h3>
+                        <a href="https://tehetseg.inf.elte.hu/nemes-online/index.html">
+                            <Translate>
+                                <English>Nemes Tihamér Online Programming Competition</English>
+                                <!-- TODO: Hungarian translation -->
+                            </Translate>
+                        </a>
+                    </h3>
+                    <Translate>
+                        <English>
+                            <ul class="list">
+                                <li>Solutions: <a href="https://github.com/albi005/NemesOnline">github.com/albi005/NemesOnline</a></li>
+                                <li>2022/2023 – <a href="http://tehetseg.inf.elte.hu/nemes-online/2023/eredmeny3.pdf">11th place</a></li>
+                                <li>2021/2022 – <a href="https://tehetseg.inf.elte.hu/nemes-online/2022/eredmeny3.pdf">19th place</a></li>
+                                <li>2020/2021 – <a href="https://tehetseg.inf.elte.hu/nemes-online/2021/eredmeny2.pdf">55th place</a></li>
+                            </ul>
+                        </English>
+                        <!-- TODO: Hungarian translation -->
+                    </Translate>
+                </li>
+                <li class="item">
+                    <h3>
+                        <a href="https://wro-association.org/">World Robot Olympiad</a>,
+                        <Translate>
+                            <English>2017, 2018, <a href="https://photos.app.goo.gl/XFj2AEYG5a4FQ9k68">2019</a></English>
+                            <!-- TODO: Hungarian translation -->
+                        </Translate>
+                    </h3>
+                    <p>
+                        <Translate>
+                            <English>
+                                Designed and programmed LEGO robots that completed autonomous tasks, reaching better
+                                placements at the competition each year.
+                            </English>
+                            <!-- TODO: Hungarian translation -->
+                        </Translate>
+                    </p>
+                </li>
+            </ul>
         </section>
     </div>
 
@@ -250,7 +308,7 @@
         return _language switch
         {
             Language.English => english,
-            Language.Hungarian => hungarian ?? "TODO: HU",
+            Language.Hungarian => hungarian ?? "TODO(HU)",
             _ => english,
         };
     }
