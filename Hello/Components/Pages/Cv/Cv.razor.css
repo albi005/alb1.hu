@@ -137,7 +137,7 @@ section:last-child {
     height: 11px;
     border-radius: 50%;
     background: var(--md-sys-color-surface);
-    border: 2px solid var(--md-sys-color-primary);
+    border: 1px solid var(--md-sys-color-tertiary);
 }
 
 .experience > .item:last-child {
