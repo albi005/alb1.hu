@@ -52,7 +52,9 @@
                     experienced with .NET, also interested in Rust, looking for an 8 week internship,
                     with opportunities later on.
                 </English>
-                <!-- TODO: Hungarian translation -->
+                Mérnökinformatikus BSc hallgató a Budapesti Műszaki és Gazdaságtudományi Egyetemen,
+                mély tapasztalattal .NET fejlesztésben, érdekel a Rust.
+                Egy 8 hetes szakmagi gyakorlatot keresek, akár a további folytatás lehetőségével.
             </Translate>
         </p>
 
@@ -101,7 +103,12 @@
                             the websites of the university and redistributes them to the students.
                         </p>
                     </English>
-                    <!-- TODO: Hungarian translation -->
+                    <Hungarian>
+                        <p>
+                            Önállóan fejlesztek egy oldalt az egyetem hallgatói számára, ami összegyűjti az egyetem híreit
+                            és eseményeit, majd azokat a felhasználó által személyreszabható módon továbbítja.
+                        </p>
+                    </Hungarian>
                 </Translate>
             </section>
             <section class="item">
@@ -113,7 +120,7 @@
                 <p class="sub">
                     <Translate>
                         <English>78 stars on GitHub · 99.5K total downloads on NuGet</English>
-                        <!-- TODO: Hungarian translation -->
+                        <Hungarian>78 csillag GitHub-on · Több, mint 99 ezer letöltés NuGet-en</Hungarian>
                     </Translate>
                 </p>
                 <p>
@@ -122,7 +129,10 @@
                             I ported Google's Material You design system helper library to C#/.NET and published it on
                             NuGet.
                         </English>
-                        <!-- TODO: Hungarian translation -->
+                        <Hungarian>
+                            Lefordítottam a Google Material You dizájnrendszerét segítő könyvtárát C#-ra és közzétettem
+                            NuGet-en
+                        </Hungarian>
                     </Translate>
                 </p>
                 <p class="note">
@@ -134,7 +144,13 @@
                             </a>
                             even by someone building on Linux with Python.
                         </English>
-                        <!-- TODO: Hungarian translation -->
+                        <Hungarian>
+                            A dokumentációm minőségét mutatja, hogy a többi lehetőség közül,
+                            az én implementációm volt a 
+                            <a href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits">
+                                <q>legkönnyebben használható</q>
+                            </a>.
+                        </Hungarian>
                     </Translate>
                 </p>
             </section>
@@ -147,11 +163,11 @@
                 </h3>
                 <p class="tech">
                     <Translate>
-                        <English>Xamarin.Forms & MvvmCross, later .NET MAUI · ASP.NET Core Web APIs · Entity Framework
-                            Core
+                        <English>
+                            Xamarin.Forms & MvvmCross, later .NET MAUI · ASP.NET Core Web APIs · Entity Framework Core
                         </English>
-                        <Hungarian>Xamarin.Forms & MvvmCross, később .NET MAUI · ASP.NET Core Web APIs · Entity
-                            Framework Core
+                        <Hungarian>
+                            Xamarin.Forms & MvvmCross, később .NET MAUI · ASP.NET Core Web APIs · Entity Framework Core
                         </Hungarian>
                     </Translate>
                 </p>
@@ -177,9 +193,31 @@
                         </p>
                     </English>
                     <Hungarian>
-                        A DisHelps csapat tagjaként fejlesztettem a mobilalkalmazást és a mögötte álló szervert.
+                        <p>
+                            A DisHelps csapat tagjaként fejlesztettem a mobilalkalmazást és a mögötte álló szervert.
+                        </p>
+                        <p>
+                            Miután egyedül maradtam a projekt fejlesztésével, lehetőségem lett szabadon refaktorálni
+                            a kódbázist: többször is újraírtam nagyobb részeit az alkalmazásnak,
+                            közben egyre könnyebben bővíthető struktúrát létrehozva. Ezen túl:
+                        </p>
+                        <ul class="list">
+                            <li>
+                                átmigráltam a Git repository-t és a projekt wikijét Azure DevOps-ról GitHub-ra,
+                            </li>
+                            <li>
+                                létrehoztam egy CI/CD rendszert GitHub Actions-zel, ami automatikusan közzétette az alkalmazást a
+                                Google Play Store-ban és az Apple App Store-ban,
+                            </li>
+                            <li>
+                                frissítettem a projektet Xamarin.Forms és MvvmCross-ról .NET MAUI-ra,
+                            </li>
+                            <li>
+                                integráltam a Piranha CMS tartalomkezelő rendeszert a szerverbe, hogy a segítségével
+                                lehessen a tudásbázis részlegét szerkeszteni az alkalmazásnak.
+                            </li>
+                        </ul>
                     </Hungarian>
-                    <!-- TODO: complete Hungarian translation -->
                 </Translate>
             </section>
         </section>
@@ -215,32 +253,27 @@
                 <h3>
                     <Translate>
                         <English>Eötvös József Gimnázium, Tata, mathematics track</English>
-                        <!-- TODO: Hungarian translation -->
+                        <Hungarian>Eötvös József Gimnázium, Tata, matematika tagozat</Hungarian>
                     </Translate>
                 </h3>
-                <Translate>
-                    <English>
-                        <p class="sub">Matura exam:</p>
-                        <ul class="scores">
-                            <li>
-                                <span class="name">Informatics (advanced level)</span>
-                                <span class="leader"></span>
-                                <span class="score">97%</span>
-                            </li>
-                            <li>
-                                <span class="name">Mathematics</span>
-                                <span class="leader"></span>
-                                <span class="score">98%</span>
-                            </li>
-                            <li>
-                                <span class="name">English</span>
-                                <span class="leader"></span>
-                                <span class="score">98%</span>
-                            </li>
-                        </ul>
-                    </English>
-                    <!-- TODO: Hungarian translation -->
-                </Translate>
+                <p class="sub">@T("Matura exam:", "Érettségi vizsga:")</p>
+                <ul class="scores">
+                    <li>
+                        <span class="name">@T("Informatics (advanced level)", "Informatika (emelt szint)")</span>
+                        <span class="leader"></span>
+                        <span class="score">97%</span>
+                    </li>
+                    <li>
+                        <span class="name">@T("Mathematics", "Matematika")</span>
+                        <span class="leader"></span>
+                        <span class="score">98%</span>
+                    </li>
+                    <li>
+                        <span class="name">@T("English", "Angol")</span>
+                        <span class="leader"></span>
+                        <span class="score">98%</span>
+                    </li>
+                </ul>
             </section>
         </section>
 
@@ -280,7 +313,7 @@
                         <a href="https://tehetseg.inf.elte.hu/nemes-online/index.html">
                             <Translate>
                                 <English>Nemes Tihamér Online Programming Competition</English>
-                                <!-- TODO: Hungarian translation -->
+                                <Hungarian>Nemes Tihamér Online Programozási Verseny</Hungarian>
                             </Translate>
                         </a>
                     </h3>
