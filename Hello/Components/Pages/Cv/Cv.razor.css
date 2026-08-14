@@ -4,12 +4,13 @@
     padding: 96px 24px 128px;
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
     font-weight: 200;
+    font-size: 14px;
     line-height: 1.65;
 }
 
 h1 {
     font-family: "Cascadia Code", monospace;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-size: clamp(30px, 5vw, 56px);
     font-weight: 200;
     letter-spacing: -0.02em;
     margin: 0;
@@ -24,7 +25,7 @@ h1 {
 
 h2 {
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
-    font-size: 0.85rem;
+    font-size: 14px;
     font-weight: 360;
     text-transform: uppercase;
     letter-spacing: 0.18em;
@@ -47,7 +48,7 @@ h2::before {
 
 h3 {
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
-    font-size: 1.05rem;
+    font-size: 17px;
     font-weight: 400;
     line-height: 1.5;
     margin: 0 0 8px;
@@ -66,8 +67,12 @@ section:last-child {
     margin-bottom: 6px;
 }
 
+.item h3:not(:first-of-type) {
+    margin-top: 36px;
+}
+
 .org {
-    font-size: 0.8rem;
+    font-size: 13px;
     font-weight: 200;
     color: var(--md-sys-color-on-surface-variant);
     margin: 0 0 6px;
@@ -83,13 +88,13 @@ section:last-child {
 }
 
 .sub {
-    font-size: 0.85rem;
+    font-size: 14px;
     color: var(--md-sys-color-on-surface-variant);
     margin: 0;
 }
 
 .from {
-    font-size: 0.8rem;
+    font-size: 13px;
     color: var(--md-sys-color-outline);
     white-space: nowrap;
     margin: 4px 0 0;
@@ -97,14 +102,14 @@ section:last-child {
 
 .tech {
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
-    font-size: 0.78rem;
+    font-size: 12px;
     color: var(--md-sys-color-secondary);
     margin: 8px 0 0;
 }
 
 .item p {
     margin: 10px 0 0;
-    max-width: 62ch;
+    max-width: 70ch;
 }
 
 /* Experience timeline */
@@ -161,12 +166,12 @@ section:last-child {
 /* Note / quote */
 .note {
     color: var(--md-sys-color-on-surface-variant);
-    font-size: 0.95rem;
+    font-size: 14px;
     font-style: italic;
 }
 
 .note a {
-    font-style: normal;
+    font-style: inherit;
 }
 
 .note q::before,
@@ -181,7 +186,7 @@ section:last-child {
     padding: 0;
     display: grid;
     gap: 6px;
-    max-width: 62ch;
+    max-width: 70ch;
 }
 
 .list li {
@@ -226,7 +231,7 @@ section:last-child {
 
 .chips li {
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
-    font-size: 0.78rem;
+    font-size: 12px;
     color: var(--md-sys-color-on-surface-variant);
     border: 1px solid var(--md-sys-color-outline-variant);
     border-radius: 999px;
@@ -268,7 +273,7 @@ section:last-child {
 .scores .score {
     flex-shrink: 0;
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
-    font-size: 0.85rem;
+    font-size: 14px;
     color: var(--md-sys-color-secondary);
 }
 
@@ -293,7 +298,7 @@ section:last-child {
     display: grid;
     gap: 6px;
     font-family: "Cascadia Code", "Courier New", Courier, monospace;
-    font-size: 0.85rem;
+    font-size: 14px;
     color: var(--md-sys-color-on-surface-variant);
 }
 
