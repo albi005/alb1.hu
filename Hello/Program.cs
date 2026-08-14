@@ -2,6 +2,7 @@ using Blazored.LocalStorage;
 using Hello.Components;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Net.Http.Headers;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
@@ -85,6 +86,15 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+if (!app.Environment.IsDevelopment() && Directory.Exists("/alb1.hu_files"))
+{
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider("/alb1.hu_files"),
+        RequestPath = "/files",
+        ServeUnknownFileTypes = true,
+    });
+}
 app.UseAntiforgery();
 
 app.Use((context, next) =>
