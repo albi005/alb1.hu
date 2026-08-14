@@ -93,6 +93,13 @@ if (!app.Environment.IsDevelopment() && Directory.Exists("/alb1.hu_files"))
         FileProvider = new PhysicalFileProvider("/alb1.hu_files"),
         RequestPath = "/files",
         ServeUnknownFileTypes = true,
+
+        // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/static-files#set-http-response-headers
+        OnPrepareResponse = ctx =>
+        {
+            // cache for 10mins
+            ctx.Context.Response.Headers.CacheControl = "public, max-age=600";
+        },
     });
 }
 app.UseAntiforgery();
