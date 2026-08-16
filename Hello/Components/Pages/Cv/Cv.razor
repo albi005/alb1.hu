@@ -49,7 +49,7 @@
             <Translate>
                 <English>
                     Computer Engineering BSc student at the Budapest University of Technology and Economics,
-                    experienced with .NET, also interested in Rust, looking for an 8 week internship,
+                    experienced with .NET and software engineering, looking for an 8 week internship,
                     open to opportunities later on.
                 </English>
                 <Hungarian>
@@ -160,12 +160,6 @@
                             a jelenlegi infrastruktúránk, komplexitása miatt, nehezen kezelhető.
                         </p>
                         <p>
-                            I researched Kubernetes and its ecosystem, including vCluster, OpenTelemetry,
-                            ArgoCD, CloudNativePG and Traefik, then created a vCluster-in-vCluster solution,
-                            with all configuration stored in a
-                            <a href="https://github.com/kir-dev/k8s">public Git repository</a>,
-                            updated automatically by a Renovate-based bot.
-                            
                             Utánanéztem a Kubernetes-nek és az ökoszisztémájának, beleértve a vCluster-t,
                             OpenTelemetry-t, ArgoCD-t, CloudNativePG-t és Traefik-ot, majd létrehoztam egy
                             vCluster-in-vCluster megoldást, melynek részeként az infrastruktúránk lényeges része egy
@@ -194,14 +188,18 @@
                         </English>
                         <Hungarian>
                             Lefordítottam a Google Material You dizájnrendszerét segítő könyvtárát C#-ra és közzétettem
-                            NuGet-en
+                            NuGet-en.
                         </Hungarian>
                     </Translate>
                 </p>
                 <p class="note">
+                    @{
+                        const string quoteLink =
+                            "https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits:~:text=found%20the%20easiest%20to%20work%20with";
+                    }
                     <Translate>
                         <English>
-                            <a href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits">
+                            <a href="@quoteLink">
                                 <q>Found the easiest to work with</q>
                             </a>
                             among alternative implementations, even by someone building with Python for Linux,
@@ -215,7 +213,7 @@
                             </a>
                             minőségét mutatja, hogy a többi lehetőség közül,
                             az én implementációm volt a
-                            <a href="https://github.com/luisbocanegra/kde-material-you-colors/tree/b380c12f8de8c8ee3f395c383406dc0f40e9e4e0#thanks--credits">
+                            <a href="@quoteLink">
                                 <q>legkönnyebben használható</q>
                             </a>.
                         </Hungarian>
@@ -285,7 +283,7 @@
                                 frissítettem a projektet Xamarin.Forms és MvvmCross-ról .NET MAUI-ra,
                             </li>
                             <li>
-                                integráltam a Piranha CMS tartalomkezelő rendeszert a szerverbe, hogy a segítségével
+                                integráltam a Piranha CMS tartalomkezelő rendszert a szerverbe, hogy a segítségével
                                 lehessen a tudásbázis részlegét szerkeszteni az alkalmazásnak.
                             </li>
                         </ul>
@@ -363,20 +361,31 @@
                             Advent of Code
                         </a>
                     </h3>
-                    <p>
                         <Translate>
                             <English>
-                                Online competition attended by 100,000s.
-                                2 puzzles daily for 25 days, getting harder over time.
-                                Any programming language or tool is allowed.
+                                <p>
+                                    Online competition attended by 100,000s.
+                                    2 puzzles daily for 25 days, getting harder over time.
+                                    Any programming language or tool is allowed.
+                                </p>
+                                <p>
+                                    In 2024, using the Rust programming language, I completed all 50 challenges,
+                                    this was achieved by only 6.4% of the 273 313 participants who completed at
+                                    least one challenge that year.
+                                </p>
                             </English>
                             <Hungarian>
-                                Online verseny, melyen évente többszázezer programozó vesz részt.
-                                25 napon keresztül, napi 2, egyre nehezedő feladat, melyet bármely programozási
-                                nyelvben vagy bármely eszközzel meg lehet oldani.
+                                <p>
+                                    Online verseny, melyen évente többszázezer programozó vesz részt.
+                                    25 napon keresztül, napi 2, egyre nehezedő feladat, melyet bármely programozási
+                                    nyelvben vagy bármely eszközzel meg lehet oldani.
+                                </p>
+                                <p>
+                                    2024-ben, a Rust programozási nyelv használatával mind az 50 feladatot teljesítettem,
+                                    ez a 273 313, legalább egy feladatot megoldó résztvevők csak 6.4%-ának sikerült.
+                                </p>
                             </Hungarian>
                         </Translate>
-                    </p>
                     <ul class="year-list">
                         <li><strong><span class="year">2024</span> <a
                                                                        href="https://github.com/albi005/advent-of-code-2024">50/50* · @T("Solutions in Rust", "Megoldásaim Rust-ban")</a></strong>
@@ -464,7 +473,7 @@
                 </English>
                 <Hungarian>
                     <p>3 asztali, és 2 szerver gépet kezelek NixOS-szel, mely lehetővé teszi, hogy a konfigurációjukat
-                        egy <a href="https://github.com/albi005/.config">nyilvános Git repository-ban</a> tároljan,
+                        egy <a href="https://github.com/albi005/.config">nyilvános Git repository-ban</a> tároljam,
                         és megosszam a gépek között.
                     </p>
                     <p>Ennek a megoldásnak a megbízhatósága inspirálta a Kir-Dev feljebb bemutatott új infrastruktúráját.</p>
@@ -475,7 +484,7 @@
             <p>
                 <Translate>
                     <English>Website for a renovated mansion, built on ASP.NET, EF and Piranha CMS.</English>
-                    <Hungarian>Egy felújított családi kúria weboldala, ASP.NET-tel, EF-fel és Piranha CMS-sel fejlesztve.</Hungarian>
+                    <Hungarian>Egy felújított kúria weboldala, ASP.NET-tel, EF-fel és Piranha CMS-sel fejlesztve.</Hungarian>
                 </Translate>
             </p>
             
